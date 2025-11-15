@@ -1,0 +1,108 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class',
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#F0FDFA',
+          100: '#CCFBF1',
+          400: '#2DD4BF',
+          500: '#14B8A6',
+          600: '#0D9488',
+          900: '#134E4A',
+        },
+        accent: {
+          50: '#FFFBEB',
+          100: '#FEF3C7',
+          400: '#FBBF24',
+          500: '#F59E0B',
+          600: '#D97706',
+        },
+        neutral: {
+          50: '#FAFAFA',
+          100: '#F5F5F5',
+          200: '#E5E5E5',
+          300: '#D4D4D4',
+          500: '#A3A3A3',
+          700: '#404040',
+          900: '#171717',
+        },
+        semantic: {
+          success: '#10B981',
+          error: '#EF4444',
+          warning: '#F59E0B',
+          info: '#14B8A6',
+        },
+        background: {
+          light: {
+            page: '#FAFAFA',
+            surface: '#FFFFFF',
+            elevated: '#F5F5F5',
+          },
+          dark: {
+            page: '#0A0A0A',
+            surface: '#1A1A1A',
+            elevated: '#262626',
+          },
+        },
+      },
+      fontFamily: {
+        arabic: ['IBM Plex Sans Arabic', 'Noto Sans Arabic', 'Almarai', 'sans-serif'],
+        latin: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+      },
+      fontSize: {
+        hero: ['72px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        'hero-mobile': ['48px', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
+        h1: ['56px', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        'h1-mobile': ['36px', { lineHeight: '1.2', letterSpacing: '-0.01em' }],
+        h2: ['40px', { lineHeight: '1.3' }],
+        'h2-mobile': ['28px', { lineHeight: '1.3' }],
+        h3: ['28px', { lineHeight: '1.3' }],
+        'h3-mobile': ['24px', { lineHeight: '1.3' }],
+        'body-large': ['20px', { lineHeight: '1.7' }],
+        body: ['16px', { lineHeight: '1.6' }],
+        small: ['14px', { lineHeight: '1.5' }],
+        caption: ['12px', { lineHeight: '1.4', letterSpacing: '0.01em' }],
+      },
+      spacing: {
+        xs: '8px',
+        sm: '16px',
+        md: '24px',
+        lg: '32px',
+        xl: '48px',
+        '2xl': '64px',
+        '3xl': '96px',
+        '4xl': '128px',
+      },
+      borderRadius: {
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '24px',
+      },
+      boxShadow: {
+        'sm-light': '0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06)',
+        'md-light': '0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06)',
+        'lg-light': '0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05)',
+        'xl-light': '0 20px 25px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.04)',
+        'sm-dark': '0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)',
+        'md-dark': '0 4px 6px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2)',
+      },
+      transitionDuration: {
+        fast: '200ms',
+        normal: '250ms',
+        slow: '300ms',
+        counter: '2000ms',
+      },
+      maxWidth: {
+        container: '1400px',
+      },
+    },
+  },
+  plugins: [],
+}
