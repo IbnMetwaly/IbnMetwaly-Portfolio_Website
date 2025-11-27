@@ -1,0 +1,64 @@
+import { render, screen, fireEvent, within, waitFor } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import Navigation from './Navigation';
+import { ThemeProvider } from '../context/ThemeContext';
+
+// Mock i18n
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key) => key,
+    i18n: {
+      changeLanguage: () => new Promise(() => {}),
+      language: 'en',
+    },
+  }),
+}));
+
+describe('Navigation component', () => {
+  beforeEach(() => {
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: vi.fn().mockImplementation(query => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: vi.fn(), // deprecated
+        removeListener: vi.fn(), // deprecated
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })),
+    });
+  });
+
+  it('should close the mobile menu when resizing to desktop view', async () => {
+    // Set initial viewport to mobile
+    window.innerWidth = 768;
+
+    render(
+      <BrowserRouter>
+        <ThemeProvider>
+          <Navigation />
+        </ThemeProvider>
+      </BrowserRouter>
+    );
+
+    // Open the mobile menu
+    const menuButton = screen.getByLabelText('Toggle menu');
+    fireEvent.click(menuButton);
+
+    // Check if the mobile menu is open
+    const mobileMenu = screen.getByTestId('mobile-menu');
+    expect(within(mobileMenu).getByText('nav.home')).toBeInTheDocument();
+
+    // Resize to desktop view
+    window.innerWidth = 1024;
+    fireEvent(window, new Event('resize'));
+
+    // Wait for the animation to complete
+    await waitFor(() => {
+      expect(screen.queryByTestId('mobile-menu')).not.toBeInTheDocument();
+    });
+  });
+});
