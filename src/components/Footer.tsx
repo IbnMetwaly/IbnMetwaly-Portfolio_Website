@@ -18,7 +18,7 @@ export default function Footer() {
             <img
               src={theme === 'light' ? '/images/logo_light.png' : '/images/logo_dark.png'}
               alt="Khalid Metwaly"
-              className="h-12 w-auto mb-md"
+              className="h-10 w-auto mb-md"
             />
             <p className="text-small text-neutral-700 dark:text-neutral-300">
               {t('footer.tagline')}
