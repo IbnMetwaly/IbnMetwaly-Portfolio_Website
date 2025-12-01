@@ -2,9 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { Linkedin, Mail, Phone } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
+  const { theme } = useTheme();
   const isArabic = i18n.language === 'ar';
 
   return (
@@ -14,9 +16,9 @@ export default function Footer() {
           {/* About */}
           <div>
             <img
-              src="/images/footer-logo.png"
+              src={theme === 'light' ? '/images/logo_light.png' : '/images/logo_dark.png'}
               alt="Khalid Metwaly"
-              className="h-12 w-auto mb-md"
+              className="h-10 w-auto mb-md"
             />
             <p className="text-small text-neutral-700 dark:text-neutral-300">
               {t('footer.tagline')}
