@@ -111,7 +111,7 @@ export default function Navigation() {
             <button
               onClick={toggleTheme}
               className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
-              aria-label="Toggle theme"
+              aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
             >
               {theme === 'light' ? (
                 <Moon className="w-5 h-5" />
