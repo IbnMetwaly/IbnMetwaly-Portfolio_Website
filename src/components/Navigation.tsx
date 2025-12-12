@@ -100,7 +100,7 @@ export default function Navigation() {
             <button
               onClick={toggleLanguage}
               className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
-              aria-label="Toggle language"
+              aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
             >
               <span className="text-sm font-semibold">
                 {i18n.language === 'en' ? 'ع' : 'EN'}
@@ -132,7 +132,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="lg:hidden w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
-              aria-label="Toggle menu"
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
