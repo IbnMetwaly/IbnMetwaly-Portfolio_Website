@@ -27,7 +27,7 @@ function AppContent() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-neutral-50 dark:bg-background-dark-page transition-colors duration-normal">
+      <div className="min-h-screen bg-neutral-50 dark:bg-background-dark-page text-neutral-900 dark:text-neutral-100 transition-colors duration-normal">
         <Navigation />
         <main>
           <Routes>
