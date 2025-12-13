@@ -102,9 +102,7 @@ export default function Navigation() {
               className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
               aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
             >
-              <span className="text-sm font-semibold">
-                {i18n.language === 'en' ? 'ع' : 'EN'}
-              </span>
+              <Globe className="w-5 h-5" />
             </button>
 
             {/* Theme Toggle */}
