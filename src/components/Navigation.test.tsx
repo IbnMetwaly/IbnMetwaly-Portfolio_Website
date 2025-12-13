@@ -45,7 +45,7 @@ describe('Navigation component', () => {
     );
 
     // Open the mobile menu
-    const menuButton = screen.getByLabelText('Toggle menu');
+    const menuButton = screen.getByLabelText('Open menu');
     fireEvent.click(menuButton);
 
     // Check if the mobile menu is open
