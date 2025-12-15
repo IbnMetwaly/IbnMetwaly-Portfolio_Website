@@ -4,6 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { Moon, Sun, Menu, X, Globe } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@radix-ui/react-tooltip';
 
 export default function Navigation() {
   const { t, i18n } = useTranslation();
@@ -96,28 +102,45 @@ export default function Navigation() {
 
           {/* Actions */}
           <div className="flex items-center space-x-2 rtl:space-x-reverse">
-            {/* Language Toggle */}
-            <button
-              onClick={toggleLanguage}
-              className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
-              aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
-            >
-              <Globe className="w-5 h-5" />
-            </button>
+            <TooltipProvider>
+              {/* Language Toggle */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={toggleLanguage}
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
+                    aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+                  >
+                    <Globe className="w-5 h-5" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent
+                  sideOffset={4}
+                  className="bg-neutral-900 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 px-3 py-1.5 text-sm rounded-md"
+                >
+                  <p>{i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}</p>
+                </TooltipContent>
+              </Tooltip>
 
-            {/* Theme Toggle */}
-            <button
-              onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
-              aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
-            >
-              {theme === 'light' ? (
-                <Moon className="w-5 h-5" />
-              ) : (
-                <Sun className="w-5 h-5" />
-              )}
-            </button>
-
+              {/* Theme Toggle */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={toggleTheme}
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
+                    aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+                  >
+                    {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent
+                  sideOffset={4}
+                  className="bg-neutral-900 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 px-3 py-1.5 text-sm rounded-md"
+                >
+                  <p>{theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
             {/* Download CV Button */}
             <Link
               to="/contact"
