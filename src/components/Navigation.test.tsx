@@ -32,6 +32,21 @@ describe('Navigation component', () => {
     });
   });
 
+  it('renders the Download CV button as a download link', () => {
+    render(
+      <BrowserRouter>
+        <ThemeProvider>
+          <Navigation />
+        </ThemeProvider>
+      </BrowserRouter>
+    );
+
+    const downloadLink = screen.getByText('nav.downloadCV');
+    expect(downloadLink.tagName).toBe('A');
+    expect(downloadLink).toHaveAttribute('href', '/Khalid_Metwaly_CV.pdf');
+    expect(downloadLink).toHaveAttribute('download', 'Khalid_Metwaly_CV.pdf');
+  });
+
   it('should close the mobile menu when resizing to desktop view', async () => {
     // Set initial viewport to mobile
     window.innerWidth = 768;

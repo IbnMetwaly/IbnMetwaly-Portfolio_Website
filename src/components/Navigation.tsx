@@ -142,12 +142,13 @@ export default function Navigation() {
               </Tooltip>
             </TooltipProvider>
             {/* Download CV Button */}
-            <Link
-              to="/contact"
+            <a
+              href="/Khalid_Metwaly_CV.pdf"
+              download="Khalid_Metwaly_CV.pdf"
               className="hidden md:block px-6 py-2.5 bg-primary-600 dark:bg-primary-400 text-white dark:text-neutral-900 rounded-md font-semibold hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-fast"
             >
               {t('nav.downloadCV')}
-            </Link>
+            </a>
 
             {/* Mobile Menu Button */}
             <button
