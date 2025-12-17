@@ -108,7 +108,7 @@ export default function Navigation() {
                 <TooltipTrigger asChild>
                   <button
                     onClick={toggleLanguage}
-                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-500"
                     aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
                   >
                     <Globe className="w-5 h-5" />
@@ -127,7 +127,7 @@ export default function Navigation() {
                 <TooltipTrigger asChild>
                   <button
                     onClick={toggleTheme}
-                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast"
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-500"
                     aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
                   >
                     {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
