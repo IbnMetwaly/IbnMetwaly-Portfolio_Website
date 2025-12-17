@@ -76,4 +76,20 @@ describe('Navigation component', () => {
       expect(screen.queryByTestId('mobile-menu')).not.toBeInTheDocument();
     });
   });
+
+  it('should have focus-visible styles on toggle buttons', () => {
+    render(
+      <BrowserRouter>
+        <ThemeProvider>
+          <Navigation />
+        </ThemeProvider>
+      </BrowserRouter>
+    );
+
+    const languageButton = screen.getByLabelText('Switch to Arabic');
+    const themeButton = screen.getByLabelText('Switch to dark theme');
+
+    expect(languageButton.className).toContain('focus-visible:ring-2 focus-visible:ring-primary-500');
+    expect(themeButton.className).toContain('focus-visible:ring-2 focus-visible:ring-primary-500');
+  });
 });
