@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Phone } from 'lucide-react';
+import { Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 export default function Footer() {
@@ -71,9 +71,11 @@ export default function Footer() {
                   href="https://linkedin.com/in/ibnmetwaly"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors inline-flex items-center space-x-2"
                 >
-                  linkedin.com/in/ibnmetwaly
+                  <span>linkedin.com/in/ibnmetwaly</span>
+                  <ExternalLink className="w-4 h-4" />
+                  <span className="sr-only">(opens in a new tab)</span>
                 </a>
               </li>
             </ul>
