@@ -12,10 +12,24 @@ import Philosophy from './pages/Philosophy';
 import Journey from './pages/Journey';
 import Impact from './pages/Impact';
 import Awards from './pages/Awards';
-import Certifications from './pages/Certifications';
+import Qualifications from './pages/Qualifications';
 import Skills from './pages/Skills';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
+
+// New Pages
+import Gallery from './pages/Gallery';
+import Services from './pages/Services';
+import Playground from './pages/Playground';
+
+// Admin Imports
+import Login from './pages/admin/Login';
+import AdminLayout from './pages/admin/components/AdminLayout';
+import Dashboard from './pages/admin/Dashboard';
+import TimelineManager from './pages/admin/sections/Timeline';
+import GalleryManager from './pages/admin/sections/Gallery';
+import QualificationsManager from './pages/admin/sections/Qualifications';
+import { ProtectedRoute } from './pages/admin/components/ProtectedRoute';
 
 function AppContent() {
   const { i18n } = useTranslation();
@@ -38,10 +52,28 @@ function AppContent() {
             <Route path="/journey" element={<Journey />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/awards" element={<Awards />} />
-            <Route path="/certifications" element={<Certifications />} />
+            <Route path="/qualifications" element={<Qualifications />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
+
+            {/* New Public Routes */}
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/playground" element={<Playground />} />
+
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<Login />} />
+            <Route path="/admin" element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }>
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="timeline" element={<TimelineManager />} />
+              <Route path="gallery" element={<GalleryManager />} />
+              <Route path="qualifications" element={<QualificationsManager />} />
+            </Route>
           </Routes>
         </main>
         <Footer />

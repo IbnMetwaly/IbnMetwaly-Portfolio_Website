@@ -1,159 +1,32 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About Me",
-    "philosophy": "Leadership Philosophy",
-    "journey": "Professional Journey",
-    "impact": "Impact in Numbers",
-    "awards": "Awards & Recognition",
-    "certifications": "Licenses & Certifications",
-    "skills": "Skills & Expertise",
+    "about": "About",
+    "philosophy": "Philosophy",
+    "journey": "Journey",
+    "impact": "Impact",
+    "awards": "Awards",
+    "qualifications": "Qualifications",
+    "skills": "Skills",
     "testimonials": "Testimonials",
     "contact": "Contact",
+    "gallery": "Gallery",
+    "services": "Services",
+    "playground": "Playground",
     "downloadCV": "Download CV"
-  },
-  "home": {
-    "hero": {
-      "name": "Khalid Metwaly",
-      "title": "Educational Leader & Arabic Language Educator",
-      "subtitle": "13+ Years of Excellence in Education | Digital Innovation Advocate | Award-Winning Teacher"
-    },
-    "stats": {
-      "title": "Impact at a Glance",
-      "attainment": {
-        "label": "Student Attainment",
-        "value": "96.5%",
-        "subtitle": "Increased from 75% in one academic year"
-      },
-      "stories": {
-        "label": "Stories Read",
-        "value": "68K+",
-        "subtitle": "1st globally on BravoBravo platform"
-      },
-      "experience": {
-        "label": "Years of Experience",
-        "value": "13+",
-        "subtitle": "UAE & Egypt"
-      },
-      "ranking": {
-        "label": "Global Ranking",
-        "value": "1st",
-        "subtitle": "Among 180 schools on BravoBravo"
-      }
-    },
-    "featuredAwards": {
-      "title": "Featured Recognition",
-      "award1": {
-        "title": "App Whisperer Award",
-        "year": "2025",
-        "organization": "Al-Kharran School"
-      },
-      "award2": {
-        "title": "Outstanding Teacher",
-        "year": "2019",
-        "organization": "Emirates National Schools"
-      },
-      "award3": {
-        "title": "Education Impact Leadership Nomination",
-        "year": "2026",
-        "organization": "World Education Summit - Dubai"
-      }
-    },
-    "summary": {
-      "title": "Professional Summary",
-      "content": "Versatile and visionary Arabic language educator with over 13 years of experience, blending curriculum leadership, digital innovation, and inclusive pedagogy. Proven success in guiding curriculum planning, designing targeted intervention programs, and leading teams to consistently achieve high student outcomes aligned with MoE/ADEK frameworks. Certified Microsoft Innovative Educator with deep expertise in leveraging technology to personalize instruction and inspire academic achievement."
-    },
-    "cta": {
-      "title": "Ready to Connect?",
-      "subtitle": "Let's discuss how my expertise can benefit your institution",
-      "button": "Get in Touch"
-    }
-  },
-  "about": {
-    "title": "About Me",
-    "subtitle": "Dedicated to Excellence in Arabic Language Education",
-    "introduction": {
-      "title": "My Story",
-      "content": "Versatile and visionary Arabic language educator with over 13 years of experience, blending curriculum leadership, digital innovation, and inclusive pedagogy. Proven success in guiding curriculum planning, designing targeted intervention programs, and leading teams to consistently achieve high student outcomes aligned with MoE/ADEK frameworks. Committed to promoting UAE National Identity and fostering a culture of integrity, wellbeing, and lifelong learning."
-    },
-    "education": {
-      "title": "Education",
-      "degree": "Bachelor's Degree in Arabic Language and Literature",
-      "university": "Cairo University",
-      "years": "2007 - 2011"
-    },
-    "values": {
-      "title": "Core Values",
-      "innovation": {
-        "title": "Innovation",
-        "description": "Leveraging cutting-edge educational technology to enhance learning outcomes"
-      },
-      "excellence": {
-        "title": "Excellence",
-        "description": "Striving for the highest standards in curriculum delivery and student achievement"
-      },
-      "inclusion": {
-        "title": "Inclusion",
-        "description": "Creating accessible learning environments that celebrate diversity"
-      }
-    },
-    "philosophyLink": {
-      "title": "Explore My Leadership Philosophy",
-      "button": "Learn More"
-    }
-  },
-  "philosophy": {
-    "title": "Leadership Philosophy",
-    "subtitle": "Digital Innovation Meets Educational Excellence",
-    "vision": {
-      "title": "My Vision",
-      "quote": "Blending curriculum leadership, digital innovation, and inclusive pedagogy to inspire excellence in every learner."
-    },
-    "pillars": {
-      "title": "Three Pillars of Excellence",
-      "curriculum": {
-        "title": "Curriculum Excellence",
-        "description": "Expert alignment with MoE/ADEK frameworks, IB PYP standards, and international best practices. Spearheaded inspection preparation efforts with IB, Cognia, NEASC, and ADEK, contributing to multiple accreditations and 'Very Good' ratings."
-      },
-      "digital": {
-        "title": "Digital Innovation",
-        "description": "Certified Microsoft Innovative Educator with deep expertise in educational technology. Successfully implemented Toddle LMS across multiple campuses and achieved global recognition on BravoBravo and iReadArabic platforms."
-      },
-      "datadriven": {
-        "title": "Data-Driven Results",
-        "description": "Proven track record of measurable improvements. Increased student attainment from 75% to 96.5% within one academic year through strategic, data-informed interventions and targeted support programs."
-      }
-    },
-    "success": {
-      "title": "Success Stories",
-      "story1": {
-        "title": "BravoBravo Global Leadership",
-        "description": "Ranked 1st globally among 180 schools with 68,000+ stories read, demonstrating exceptional digital literacy engagement."
-      },
-      "story2": {
-        "title": "iReadArabic Excellence",
-        "description": "Achieved 2nd place locally (100+ schools) and 3rd place globally (300+ schools) in Arabic reading proficiency."
-      },
-      "story3": {
-        "title": "Toddle LMS Implementation",
-        "description": "Led successful system-wide rollout as Steering Committee member, providing strategic guidance and curriculum alignment across ENS campuses."
-      }
-    }
   },
   "journey": {
     "title": "Professional Journey",
-    "subtitle": "13+ Years of Educational Leadership",
+    "subtitle": "13+ Years of Excellence in Education",
     "timeline": {
       "position1": {
-        "title": "MoE Subjects Lead",
-        "organization": "Aldar Education - Al-Kharran School",
+        "title": "Arabic Department Head",
+        "organization": "Al-Kharran School",
         "location": "Ras Al Khaimah, UAE",
-        "period": "October 2024 - September 2025",
-        "description": "Provided professional leadership and support for curriculum implementation, instructional effectiveness, and student achievements in MoE Subjects.",
+        "period": "August 2024 - Present",
+        "description": "Leading the Arabic department with focus on curriculum innovation and student achievement.",
         "achievements": [
-          "Spearheaded school-wide initiatives that led to doubling students' reading engagement on BravoBravo App",
-          "Story count rising from 14,000 to 31,000+ resulting in a leap in students' Attainment",
-          "21% increase in student attainment with 83% of students meeting or exceeding expected progress in Arabic Benchmarks"
+          "Significant improvement in student attainment with 83% of students meeting or exceeding expected progress"
         ]
       },
       "position2": {
@@ -161,10 +34,10 @@
         "organization": "Emirates National School",
         "location": "Al Ain, UAE",
         "period": "September 2021 - August 2024",
-        "description": "Played a pivotal role in curriculum alignment and instructional excellence as National Curriculum Coordinator.",
+        "description": "Curriculum alignment and instructional excellence.",
         "achievements": [
-          "BravoBravo: Ranked 1st globally among 180 schools with 68,000+ stories read",
-          "iReadArabic: 2nd place locally (100+ schools), 3rd place globally (300+ schools)"
+          "BravoBravo: Ranked 1st globally among 180 schools",
+          "iReadArabic: 2nd place locally"
         ]
       },
       "position3": {
@@ -172,280 +45,30 @@
         "organization": "Emirates National School",
         "location": "Al Ain, UAE",
         "period": "September 2017 - August 2024",
-        "description": "Developed engaging lesson plans and innovative learning environments that enhanced students' language acquisition.",
+        "description": "Developed innovative learning environments.",
         "achievements": [
-          "Toddle (LMS) Steering Committee Member - 2021-2023: Played a pivotal role in successful rollout of Toddle LMS across ENS campuses",
-          "Preparing Future Writers Project - 2020: Designed, Created, and Published the school's digital portfolio for Sharjah Award for Educational Excellence"
+          "Toddle Steering Committee Member",
+          "Sharjah Award digital portfolio creator"
         ]
       },
       "position4": {
         "title": "Arabic Teacher",
         "organization": "Salahaldin International School",
         "location": "Cairo, Egypt",
-        "period": "September 2013 - March 2017",
-        "description": "Developed engaging lesson plans and innovative learning environments while monitoring student progress through data analysis."
+        "period": "2013 - 2017",
+        "description": "Developed engaging lesson plans and innovative learning environments."
       },
       "position5": {
         "title": "Arabic Language Instructor",
         "organization": "International Center for Teaching Arabic",
         "location": "Cairo, Egypt",
-        "period": "May 2012 - August 2013",
-        "description": "Provided Arabic language courses to non-native speakers through customized courses tailored to learner's needs and personal goals."
+        "period": "2012 - 2013",
+        "description": "Arabic language courses for non-native speakers."
       }
-    }
-  },
-  "impact": {
-    "title": "Impact in Numbers",
-    "subtitle": "Measurable Results, Lasting Change",
-    "metrics": {
-      "attainment": {
-        "value": "96.5%",
-        "label": "Student Attainment",
-        "subtitle": "From 75% in one year"
-      },
-      "stories": {
-        "value": "68K+",
-        "label": "Stories Read",
-        "subtitle": "BravoBravo Global #1"
-      },
-      "increase": {
-        "value": "21%",
-        "label": "Attainment Increase",
-        "subtitle": "83% meeting benchmarks"
-      },
-      "engagement": {
-        "value": "2X",
-        "label": "Reading Engagement",
-        "subtitle": "14K to 31K+ stories"
-      }
-    },
-    "charts": {
-      "engagement": {
-        "title": "Reading Engagement Growth",
-        "subtitle": "BravoBravo Story Count Over Time"
-      },
-      "progress": {
-        "title": "Student Progress in Arabic",
-        "subtitle": "Percentage Meeting or Exceeding Benchmarks"
-      }
-    }
-  },
-  "awards": {
-    "title": "Awards & Recognition",
-    "subtitle": "Celebrating Excellence in Education",
-    "list": {
-      "award1": {
-        "title": "App Whisperer Award",
-        "organization": "Al-Kharran School",
-        "year": "2025",
-        "description": "Recognition for outstanding integration of educational technology"
-      },
-      "award2": {
-        "title": "Outstanding Teacher",
-        "organization": "Emirates National Schools",
-        "year": "2019",
-        "description": "Excellence in teaching and student engagement"
-      },
-      "award3": {
-        "title": "Education Impact Leadership Award Nomination",
-        "organization": "World Education Summit (WES)",
-        "year": "2026",
-        "location": "Dubai",
-        "description": "Nominated for exceptional leadership in education"
-      },
-      "award4": {
-        "title": "Excellence in Education Award Nomination",
-        "organization": "Education 2.0 Conference",
-        "year": "2025",
-        "location": "Dubai",
-        "description": "Nominated for innovative teaching practices"
-      },
-      "award5": {
-        "title": "BravoBravo Global Leader",
-        "organization": "BravoBravo Platform",
-        "year": "2024",
-        "description": "1st place globally among 180 schools with 68,000+ stories"
-      },
-      "award6": {
-        "title": "iReadArabic Excellence",
-        "organization": "iReadArabic Platform",
-        "year": "2024",
-        "description": "2nd place locally (100+ schools), 3rd place globally (300+ schools)"
-      }
-    }
-  },
-  "certifications": {
-    "title": "Licenses & Certifications",
-    "subtitle": "Professional Credentials & Continuous Learning",
-    "licenses": {
-      "title": "Professional Licenses",
-      "license1": {
-        "title": "Educational Leadership License",
-        "year": "2025"
-      },
-      "license2": {
-        "title": "Teacher's License",
-        "organization": "Ministry of Education - UAE",
-        "year": "2022"
-      }
-    },
-    "certifications": {
-      "title": "Core Certifications",
-      "cert1": {
-        "title": "Certified Microsoft Innovative Educator",
-        "organization": "Microsoft Educator Center",
-        "year": "2020"
-      },
-      "cert2": {
-        "title": "eProve eleot 2.0 Observation Tool",
-        "organization": "Cognia",
-        "year": "2021"
-      },
-      "cert3": {
-        "title": "Teaching Arabic as a Foreign Language",
-        "organization": "International Center for Teaching Arabic",
-        "year": "2012"
-      },
-      "cert4": {
-        "title": "Basic Skills in Learning Arabic Language",
-        "organization": "National Teachers Academy",
-        "year": "2018"
-      },
-      "cert5": {
-        "title": "Pedagogy and Teaching Skills",
-        "organization": "Ain Shams University",
-        "year": "2015"
-      }
-    },
-    "professional": {
-      "title": "Professional Development",
-      "pd1": {
-        "title": "Kagan Cooperative Learning Strategies",
-        "organization": "Kagan Publishing & PD",
-        "year": "2024"
-      },
-      "pd2": {
-        "title": "Investigating Inquiry (Category 3)",
-        "organization": "IB Global Center",
-        "year": "2022"
-      },
-      "pd3": {
-        "title": "Local and Global Inquirers (Category 2)",
-        "organization": "IB Global Center",
-        "year": "2022"
-      },
-      "pd4": {
-        "title": "PYP Arabic Concept Based",
-        "organization": "National Teachers Academy",
-        "year": "2018"
-      },
-      "pd5": {
-        "title": "Making PYP Happen in Classroom (Category 1)",
-        "organization": "IB Global Center",
-        "year": "2017"
-      },
-      "pd6": {
-        "title": "English Conversation Course",
-        "organization": "Canadian International College in Cairo",
-        "year": "2010"
-      },
-      "pd7": {
-        "title": "50+ Modules Completed",
-        "organization": "Microsoft Learn Platform",
-        "year": "Ongoing"
-      }
-    }
-  },
-  "skills": {
-    "title": "Skills & Expertise",
-    "subtitle": "Comprehensive Professional Capabilities",
-    "technical": {
-      "title": "Computer Skills",
-      "skills": [
-        "Microsoft 365 Suite",
-        "Educational Technology",
-        "Classroom Tech-Tools",
-        "Digital Platforms",
-        "Learning Management Systems (LMS)",
-        "Student Information Systems (SIS)",
-        "Hardware & Software Troubleshooting"
-      ]
-    },
-    "soft": {
-      "title": "Soft Skills",
-      "skills": [
-        "Analytical Skills",
-        "Strategic Planning",
-        "Curriculum Innovation",
-        "Creative Problem Solving",
-        "Excellent Organizational Skills",
-        "Data-Informed Decision Making",
-        "Staff Development & Performance Management",
-        "Intercultural Communication Skills"
-      ]
-    },
-    "languages": {
-      "title": "Languages",
-      "arabic": "Arabic (Native)",
-      "english": "English (Fluent)"
-    },
-    "teaching": {
-      "title": "Teaching Expertise",
-      "areas": [
-        "Arabic Language Education",
-        "Curriculum Development",
-        "Digital Literacy",
-        "IB PYP Framework",
-        "MoE/ADEK Standards",
-        "Inclusive Pedagogy",
-        "Assessment & Data Analysis"
-      ]
-    }
-  },
-  "testimonials": {
-    "title": "Testimonials",
-    "subtitle": "Voices from Students, Parents & Colleagues",
-    "placeholder": {
-      "note": "31 testimonial files available from ENS UAE (2017-2024) and SIS Egypt (2013-2017)",
-      "message": "This section will showcase feedback from parents, students, and colleagues once uploaded."
-    },
-    "categories": {
-      "all": "All",
-      "parents": "Parents",
-      "students": "Students",
-      "colleagues": "Colleagues"
-    }
-  },
-  "contact": {
-    "title": "Get in Touch",
-    "subtitle": "Let's Connect and Discuss Opportunities",
-    "form": {
-      "name": "Full Name",
-      "namePlaceholder": "Your name",
-      "email": "Email Address",
-      "emailPlaceholder": "your.email@example.com",
-      "subject": "Subject",
-      "subjectPlaceholder": "What is this regarding?",
-      "message": "Message",
-      "messagePlaceholder": "Your message here...",
-      "submit": "Send Message",
-      "sending": "Sending...",
-      "success": "Message sent successfully! I will get back to you soon.",
-      "error": "Failed to send message. Please try again."
-    },
-    "info": {
-      "title": "Contact Information",
-      "email": "k.metwaly@hotmail.com",
-      "phone": "+971 54 500 9890",
-      "linkedin": "linkedin.com/in/ibnmetwaly"
-    },
-    "links": {
-      "downloadCV": "Download CV",
-      "futureWriters": "Preparing Future Writers Project"
     }
   },
   "footer": {
-    "copyright": "© 2025 Khalid Metwaly. All rights reserved.",
-    "tagline": "Educational Leader | Arabic Language Educator | Digital Innovation Advocate"
+    "tagline": "Educational Leader | Arabic Language Educator | Digital Innovation Advocate",
+    "copyright": "© 2025 Khalid Metwaly. All rights reserved."
   }
 }

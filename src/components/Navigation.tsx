@@ -49,10 +49,10 @@ export default function Navigation() {
     { path: '/journey', label: t('nav.journey') },
     { path: '/impact', label: t('nav.impact') },
     { path: '/awards', label: t('nav.awards') },
-    { path: '/certifications', label: t('nav.certifications') },
+    { path: '/qualifications', label: t('nav.qualifications') },
     { path: '/skills', label: t('nav.skills') },
     { path: '/testimonials', label: t('nav.testimonials') },
-    { path: '/contact', label: t('nav.contact') }
+    { path: '/gallery', label: t('nav.gallery') }, { path: '/services', label: t('nav.services') }, { path: '/playground', label: t('nav.playground') }, { path: '/contact', label: t('nav.contact') }
   ];
 
   return (
@@ -79,7 +79,7 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
-            {navLinks.slice(0, 5).map((link) => (
+            {navLinks.slice(0, 9).map((link) => (
               <Link
                 key={link.path}
                 to={link.path}

@@ -1,147 +1,202 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { supabase } from '../lib/supabase';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, Calendar } from 'lucide-react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 export default function Journey() {
   const { t } = useTranslation();
+  const [milestones, setMilestones] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+  useEffect(() => {
+    async function fetchMilestones() {
+      const { data } = await supabase.from('milestones').select('*').order('date', { ascending: true });
+
+      if (data && data.length > 0) {
+        setMilestones(data);
+      } else {
+        const fallback = [
+          {
+            title: t('journey.timeline.position5.title'),
+            organization: t('journey.timeline.position5.organization'),
+            period: '2012-2013',
+            description: t('journey.timeline.position5.description'),
+            date: '2012-05-01'
+          },
+          {
+            title: t('journey.timeline.position4.title'),
+            organization: t('journey.timeline.position4.organization'),
+            period: '2013-2017',
+            description: t('journey.timeline.position4.description'),
+            date: '2013-09-01'
+          },
+          {
+            title: t('journey.timeline.position3.title'),
+            organization: t('journey.timeline.position3.organization'),
+            period: '2017-2024',
+            description: t('journey.timeline.position3.description'),
+            achievements: t('journey.timeline.position3.achievements', { returnObjects: true }),
+            date: '2017-09-01'
+          },
+          {
+            title: t('journey.timeline.position2.title'),
+            organization: t('journey.timeline.position2.organization'),
+            period: '2021-2024',
+            description: t('journey.timeline.position2.description'),
+            achievements: t('journey.timeline.position2.achievements', { returnObjects: true }),
+            date: '2021-09-01'
+          },
+          {
+            title: t('journey.timeline.position1.title'),
+            organization: t('journey.timeline.position1.organization'),
+            period: '2024-Present',
+            description: t('journey.timeline.position1.description'),
+            achievements: t('journey.timeline.position1.achievements', { returnObjects: true }),
+            date: '2024-09-01'
+          }
+        ];
+        setMilestones(fallback);
+      }
+      setLoading(false);
+    }
+    fetchMilestones();
+  }, [t]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { scrollLeft } = scrollRef.current;
+      const scrollTo = direction === 'left' ? scrollLeft - 400 : scrollLeft + 400;
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
   };
 
-  const positions = [
-    {
-      title: t('journey.timeline.position1.title'),
-      organization: t('journey.timeline.position1.organization'),
-      location: t('journey.timeline.position1.location'),
-      period: t('journey.timeline.position1.period'),
-      description: t('journey.timeline.position1.description'),
-      achievements: t('journey.timeline.position1.achievements', { returnObjects: true }) as string[]
-    },
-    {
-      title: t('journey.timeline.position2.title'),
-      organization: t('journey.timeline.position2.organization'),
-      location: t('journey.timeline.position2.location'),
-      period: t('journey.timeline.position2.period'),
-      description: t('journey.timeline.position2.description'),
-      achievements: t('journey.timeline.position2.achievements', { returnObjects: true }) as string[]
-    },
-    {
-      title: t('journey.timeline.position3.title'),
-      organization: t('journey.timeline.position3.organization'),
-      location: t('journey.timeline.position3.location'),
-      period: t('journey.timeline.position3.period'),
-      description: t('journey.timeline.position3.description'),
-      achievements: t('journey.timeline.position3.achievements', { returnObjects: true }) as string[]
-    },
-    {
-      title: t('journey.timeline.position4.title'),
-      organization: t('journey.timeline.position4.organization'),
-      location: t('journey.timeline.position4.location'),
-      period: t('journey.timeline.position4.period'),
-      description: t('journey.timeline.position4.description')
-    },
-    {
-      title: t('journey.timeline.position5.title'),
-      organization: t('journey.timeline.position5.organization'),
-      location: t('journey.timeline.position5.location'),
-      period: t('journey.timeline.position5.period'),
-      description: t('journey.timeline.position5.description')
-    }
-  ];
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') scroll('left');
+      if (e.key === 'ArrowRight') scroll('right');
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  if (loading) return <div className="pt-32 text-center" aria-live="polite">Loading Journey...</div>;
 
   return (
-    <div className="pt-20">
-      {/* Page Header */}
-      <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
+    <div className="pt-20 min-h-screen overflow-hidden">
+      <section className="bg-white dark:bg-background-dark-page py-2xl border-b border-neutral-100 dark:border-neutral-800">
         <div className="max-w-container mx-auto px-lg text-center">
           <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             className="text-h1 font-bold mb-md"
           >
-            {t('journey.title')}
+            A 13-Year Odyssey in Education
           </motion.h1>
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            transition={{ delay: 0.1 }}
-            className="text-body-large text-neutral-700 dark:text-neutral-300"
-          >
-            {t('journey.subtitle')}
-          </motion.p>
+          <p className="text-body-large text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+            From Cairo to Al Ain, a journey of growth, innovation, and lasting impact on the next generation.
+          </p>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-2xl bg-white dark:bg-background-dark-surface">
-        <div className="max-w-4xl mx-auto px-lg">
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-neutral-300 dark:bg-neutral-700 rtl:left-auto rtl:right-8"></div>
+      <section className="relative py-3xl bg-neutral-50 dark:bg-background-dark-surface overflow-hidden">
+        <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-neutral-300 dark:bg-neutral-700 -translate-y-1/2"></div>
 
-            {/* Timeline Entries */}
-            <div className="space-y-xl">
-              {positions.map((position, index) => (
-                <motion.div
-                  key={index}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative pl-20 rtl:pl-0 rtl:pr-20"
-                >
-                  {/* Timeline Node */}
-                  <div className="absolute left-6 top-2 w-4 h-4 bg-primary-500 dark:bg-primary-400 rounded-full border-4 border-white dark:border-background-dark-surface rtl:left-auto rtl:right-6"></div>
+        <div className="absolute top-1/2 -translate-y-1/2 left-lg z-10">
+          <button
+            onClick={() => scroll('left')}
+            aria-label="Scroll timeline left"
+            className="p-sm bg-white dark:bg-background-dark-elevated shadow-lg rounded-full hover:scale-110 transition-transform focus-visible:ring-2 focus-visible:ring-primary-600 outline-none"
+          >
+            <ChevronLeft size={24} />
+          </button>
+        </div>
+        <div className="absolute top-1/2 -translate-y-1/2 right-lg z-10">
+          <button
+            onClick={() => scroll('right')}
+            aria-label="Scroll timeline right"
+            className="p-sm bg-white dark:bg-background-dark-elevated shadow-lg rounded-full hover:scale-110 transition-transform focus-visible:ring-2 focus-visible:ring-primary-600 outline-none"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
 
-                  {/* Content Card */}
-                  <div className="bg-neutral-50 dark:bg-background-dark-elevated p-lg rounded-lg hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal">
-                    <div className="flex items-start justify-between mb-md flex-wrap gap-sm">
-                      <div>
-                        <h3 className="text-h3 font-semibold text-primary-600 dark:text-primary-400 mb-xs">
-                          {position.title}
-                        </h3>
-                        <p className="text-body font-medium text-neutral-900 dark:text-neutral-100">
-                          {position.organization}
-                        </p>
+        <div
+          ref={scrollRef}
+          role="region"
+          aria-label="Career Odyssey Timeline"
+          tabIndex={0}
+          className="flex overflow-x-auto gap-xl px-[10vw] no-scrollbar snap-x snap-mandatory py-xl focus-visible:ring-2 focus-visible:ring-primary-600/20 outline-none"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {milestones.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex-shrink-0 w-[400px] snap-center relative"
+            >
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-primary-600 rounded-full border-4 border-white dark:border-background-dark-surface z-20"></div>
+
+              <div
+                className={`bg-white dark:bg-background-dark-elevated p-xl rounded-2xl shadow-lg border border-neutral-100 dark:border-neutral-800 transition-all hover:shadow-xl hover:-translate-y-1 ${
+                index % 2 === 0 ? 'mb-[150px]' : 'mt-[150px]'
+              }`}
+              >
+                <div className="flex items-center justify-between mb-md">
+                   <span className="text-small font-bold text-primary-600 bg-primary-50 dark:bg-primary-900/20 px-sm py-xs rounded">
+                    {item.period}
+                  </span>
+                </div>
+                <h3 className="text-h4 font-bold mb-xs">{item.title}</h3>
+                <p className="text-body font-medium text-neutral-900 dark:text-neutral-100 mb-md">{item.organization}</p>
+
+                <p className="text-small text-neutral-600 dark:text-neutral-400 mb-lg line-clamp-3">
+                  {item.description}
+                </p>
+
+                {item.achievements && (Array.isArray(item.achievements)) && item.achievements.length > 0 && (
+                  <div className="space-y-2">
+                    {item.achievements.slice(0, 2).map((ach: string, i: number) => (
+                      <div key={i} className="flex items-start space-x-2 text-xs text-neutral-700 dark:text-neutral-300">
+                        <span className="text-primary-500 mt-1" aria-hidden="true">•</span>
+                        <span>{ach}</span>
                       </div>
-                      <div className="text-small text-neutral-600 dark:text-neutral-400 space-y-1">
-                        <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                          <Calendar className="w-4 h-4" />
-                          <span>{position.period}</span>
-                        </div>
-                        <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                          <MapPin className="w-4 h-4" />
-                          <span>{position.location}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <p className="text-body text-neutral-700 dark:text-neutral-300 mb-sm">
-                      {position.description}
-                    </p>
-
-                    {position.achievements && (
-                      <ul className="space-y-2 mt-md">
-                        {position.achievements.map((achievement, idx) => (
-                          <li key={idx} className="flex items-start space-x-2 rtl:space-x-reverse">
-                            <span className="text-primary-500 dark:text-primary-400 mt-1">•</span>
-                            <span className="text-body text-neutral-700 dark:text-neutral-300">
-                              {achievement}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    ))}
                   </div>
-                </motion.div>
-              ))}
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-2xl bg-white dark:bg-background-dark-page">
+        <div className="max-w-container mx-auto px-lg flex flex-col md:flex-row items-center justify-between gap-xl">
+          <div className="flex items-center space-x-6">
+            <div className="text-center">
+              <p className="text-h2 font-bold text-primary-600">13+</p>
+              <p className="text-small text-neutral-500 uppercase tracking-wider">Years</p>
             </div>
+            <div className="text-center">
+              <p className="text-h2 font-bold text-primary-600">5+</p>
+              <p className="text-small text-neutral-500 uppercase tracking-wider">Institutions</p>
+            </div>
+            <div className="text-center">
+              <p className="text-h2 font-bold text-primary-600">1000+</p>
+              <p className="text-small text-neutral-500 uppercase tracking-wider">Students</p>
+            </div>
+          </div>
+          <div className="flex flex-col items-center md:items-end">
+            <p className="text-body-large font-medium mb-md text-center md:text-right">Want to see more details?</p>
+            <a
+              href="/qualifications"
+              className="px-lg py-sm bg-neutral-900 dark:bg-white dark:text-neutral-900 text-white rounded-full font-bold hover:scale-105 transition-transform focus-visible:ring-2 focus-visible:ring-primary-600 outline-none"
+            >
+              View Qualifications
+            </a>
           </div>
         </div>
       </section>

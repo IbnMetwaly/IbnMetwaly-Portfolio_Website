@@ -84,7 +84,7 @@ export default function Footer() {
 
         <div className="pt-xl border-t border-neutral-200 dark:border-neutral-700">
           <p className="text-center text-small text-neutral-500 dark:text-neutral-400">
-            {t('footer.copyright')}
+            {t('footer.copyright')} • <Link to='/admin/login' className='hover:text-primary-600 transition-colors'>Admin Login</Link>
           </p>
         </div>
       </div>

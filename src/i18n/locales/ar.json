@@ -6,7 +6,7 @@
     "journey": "الرحلة المهنية",
     "impact": "الأثر بالأرقام",
     "awards": "الجوائز والتكريمات",
-    "certifications": "الرخص والشهادات",
+    "qualifications": "الرخص والشهادات",
     "skills": "المهارات والخبرات",
     "testimonials": "بكلماتهم",
     "contact": "تواصل معي",
@@ -273,7 +273,7 @@
       }
     }
   },
-  "certifications": {
+  "qualifications": {
     "title": "الرخص والشهادات",
     "subtitle": "المؤهلات المهنية والتعلم المستمر",
     "licenses": {
@@ -288,7 +288,7 @@
         "year": "2022"
       }
     },
-    "certifications": {
+    "qualifications": {
       "title": "الشهادات الأساسية",
       "cert1": {
         "title": "معلم مبتكر معتمد من مايكروسوفت",
