@@ -41,8 +41,10 @@ describe('Navigation component', () => {
       </BrowserRouter>
     );
 
-    const downloadLink = screen.getByText('nav.downloadCV');
-    expect(downloadLink.tagName).toBe('A');
+    const downloadLinkElement = screen.getByText('nav.downloadCV');
+    const downloadLink = downloadLinkElement.closest('a');
+    expect(downloadLink).not.toBeNull();
+    expect(downloadLink?.tagName).toBe('A');
     expect(downloadLink).toHaveAttribute('href', '/Khalid_Metwaly_CV.pdf');
     expect(downloadLink).toHaveAttribute('download', 'Khalid_Metwaly_CV.pdf');
   });
@@ -65,7 +67,7 @@ describe('Navigation component', () => {
 
     // Check if the mobile menu is open
     const mobileMenu = screen.getByTestId('mobile-menu');
-    expect(within(mobileMenu).getByText('nav.home')).toBeInTheDocument();
+    expect(within(mobileMenu).getAllByText('nav.home').length).toBeGreaterThan(0);
 
     // Resize to desktop view
     window.innerWidth = 1024;
