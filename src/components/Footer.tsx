@@ -1,13 +1,25 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { Linkedin, Mail, Phone, ExternalLink } from 'lucide-react';
+import { Linkedin, Mail, Phone, ExternalLink, Download } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 export default function Footer() {
   const { t, i18n } = useTranslation();
   const { theme } = useTheme();
-  const isArabic = i18n.language === 'ar';
+
+  const navLinks = [
+    { path: '/', label: t('nav.home') },
+    { path: '/about', label: t('nav.about') },
+    { path: '/philosophy', label: t('nav.philosophy') },
+    { path: '/journey', label: t('nav.journey') },
+    { path: '/impact', label: t('nav.impact') },
+    { path: '/awards', label: t('nav.awards') },
+    { path: '/certifications', label: t('nav.certifications') },
+    { path: '/skills', label: t('nav.skills') },
+    { path: '/testimonials', label: t('nav.testimonials') },
+    { path: '/contact', label: t('nav.contact') }
+  ];
 
   return (
     <footer className="bg-white dark:bg-background-dark-surface border-t border-neutral-200 dark:border-neutral-700 py-2xl">
@@ -27,15 +39,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-h3 text-neutral-900 dark:text-neutral-100 mb-md">{t('nav.home')}</h3>
-            <ul className="space-y-2">
-              {[
-                { path: '/about', label: t('nav.about') },
-                { path: '/philosophy', label: t('nav.philosophy') },
-                { path: '/journey', label: t('nav.journey') },
-                { path: '/impact', label: t('nav.impact') },
-                { path: '/contact', label: t('nav.contact') }
-              ].map((link) => (
+            <h3 className="font-semibold text-h3 text-neutral-900 dark:text-neutral-100 mb-md">{t('footer.quickLinks')}</h3>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {navLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
@@ -76,6 +82,16 @@ export default function Footer() {
                   <span>linkedin.com/in/ibnmetwaly</span>
                   <ExternalLink className="w-4 h-4" />
                   <span className="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li className="flex items-center space-x-3 rtl:space-x-reverse text-small pt-2 border-t border-neutral-100 dark:border-neutral-800">
+                <Download className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+                <a
+                  href="/Khalid_Metwaly_CV.pdf"
+                  download="Khalid_Metwaly_CV.pdf"
+                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium flex items-center space-x-2 rtl:space-x-reverse"
+                >
+                  <span>{t('nav.downloadCV')}</span>
                 </a>
               </li>
             </ul>

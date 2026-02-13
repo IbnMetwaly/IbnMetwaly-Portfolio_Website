@@ -88,10 +88,11 @@ export default function Contact() {
               <h2 className="text-h2 font-bold text-neutral-900 dark:text-neutral-100 mb-xl">{t('contact.form.submit')}</h2>
               <form onSubmit={handleSubmit} className="space-y-lg">
                 <div>
-                  <label className="block text-body font-medium text-neutral-900 dark:text-neutral-100 mb-xs">
+                  <label htmlFor="name" className="block text-body font-medium text-neutral-900 dark:text-neutral-100 mb-xs">
                     {t('contact.form.name')}
                   </label>
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     value={formData.name}
@@ -103,10 +104,11 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-body font-medium text-neutral-900 dark:text-neutral-100 mb-xs">
+                  <label htmlFor="email" className="block text-body font-medium text-neutral-900 dark:text-neutral-100 mb-xs">
                     {t('contact.form.email')}
                   </label>
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     value={formData.email}
@@ -118,10 +120,11 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-body font-medium text-neutral-900 dark:text-neutral-100 mb-xs">
+                  <label htmlFor="subject" className="block text-body font-medium text-neutral-900 dark:text-neutral-100 mb-xs">
                     {t('contact.form.subject')}
                   </label>
                   <input
+                    id="subject"
                     type="text"
                     name="subject"
                     value={formData.subject}
@@ -133,10 +136,11 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-body font-medium text-neutral-900 dark:text-neutral-100 mb-xs">
+                  <label htmlFor="message" className="block text-body font-medium text-neutral-900 dark:text-neutral-100 mb-xs">
                     {t('contact.form.message')}
                   </label>
                   <textarea
+                    id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
@@ -215,14 +219,14 @@ export default function Contact() {
                     <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center">
                       <Linkedin className="w-6 h-6 text-primary-600 dark:text-primary-400" />
                     </div>
-                    <span className="text-body">{t('contact.info.linkedin')}</span>
+                    <span className="text-body">{t('contact.info.linkedin')}<span className="sr-only"> (opens in a new tab)</span></span>
                   </a>
                 </div>
 
                 <div className="space-y-md">
                   <a
-                    href="/Khalid-Metwaly-CV.pdf"
-                    download
+                    href="/Khalid_Metwaly_CV.pdf"
+                    download="Khalid_Metwaly_CV.pdf"
                     className="flex items-center justify-center space-x-2 rtl:space-x-reverse w-full px-6 py-3 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-md font-semibold hover:scale-105 transition-all duration-fast"
                   >
                     <Download className="w-5 h-5" />
@@ -236,7 +240,7 @@ export default function Contact() {
                     className="flex items-center justify-center space-x-2 rtl:space-x-reverse w-full px-6 py-3 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 rounded-md font-semibold hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all duration-fast"
                   >
                     <ExternalLink className="w-5 h-5" />
-                    <span>{t('contact.links.futureWriters')}</span>
+                    <span>{t('contact.links.futureWriters')}<span className="sr-only"> (opens in a new tab)</span></span>
                   </a>
                 </div>
               </div>

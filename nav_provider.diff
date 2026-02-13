@@ -1,0 +1,84 @@
+<<<<<<< SEARCH
+          {/* Actions */}
+          <div className="flex items-center space-x-2 rtl:space-x-reverse">
+            <TooltipProvider>
+              {/* Language Toggle */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={toggleLanguage}
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-500"
+                    aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+                  >
+                    <Globe className="w-5 h-5" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent
+                  sideOffset={4}
+                  className="bg-neutral-900 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 px-3 py-1.5 text-sm rounded-md"
+                >
+                  <p>{i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}</p>
+                </TooltipContent>
+              </Tooltip>
+
+              {/* Theme Toggle */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={toggleTheme}
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-500"
+                    aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+                  >
+                    {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent
+                  sideOffset={4}
+                  className="bg-neutral-900 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 px-3 py-1.5 text-sm rounded-md"
+                >
+                  <p>{theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+=======
+          {/* Actions */}
+          <TooltipProvider>
+            <div className="flex items-center space-x-2 rtl:space-x-reverse">
+              {/* Language Toggle */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={toggleLanguage}
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-500"
+                    aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
+                  >
+                    <Globe className="w-5 h-5" />
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent
+                  sideOffset={4}
+                  className="bg-neutral-900 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 px-3 py-1.5 text-sm rounded-md"
+                >
+                  <p>{i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}</p>
+                </TooltipContent>
+              </Tooltip>
+
+              {/* Theme Toggle */}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={toggleTheme}
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-500"
+                    aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+                  >
+                    {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent
+                  sideOffset={4}
+                  className="bg-neutral-900 text-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 px-3 py-1.5 text-sm rounded-md"
+                >
+                  <p>{theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}</p>
+                </TooltipContent>
+              </Tooltip>
+>>>>>>> REPLACE
