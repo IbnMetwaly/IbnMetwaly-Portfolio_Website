@@ -40,12 +40,12 @@ export default function Certifications() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                className="flex flex-col bg-gradient-to-br from-accent-50 to-neutral-50 dark:from-accent-900 dark:to-background-dark-elevated p-lg rounded-lg border-l-4 border-accent-500"
+                className="flex flex-col bg-white dark:bg-background-dark-surface p-lg rounded-lg border-t-4 border-accent-500 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
               >
                 <div className="flex-grow">
                   <Award className="w-8 h-8 text-accent-600 dark:text-accent-400 mb-sm" />
-                  <h3 className="text-h3 font-semibold mb-xs">{t(`certifications.licenses.${license}.title`)}</h3>
-                  {t(`certifications.licenses.${license}.organization`) && (
+                  <h3 className="text-h3 font-semibold mb-xs text-neutral-900 dark:text-neutral-100">{t(`certifications.licenses.${license}.title`)}</h3>
+                  {t(`certifications.licenses.${license}.organization`, { defaultValue: '' }) && (
                     <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
                       {t(`certifications.licenses.${license}.organization`)}
                     </p>
@@ -54,7 +54,7 @@ export default function Certifications() {
                     {t(`certifications.licenses.${license}.year`)}
                   </p>
                 </div>
-                <div className="pt-sm border-t border-accent-200 dark:border-accent-800">
+                <div className="pt-sm border-t border-neutral-100 dark:border-neutral-800">
                   <a
                     href={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/licenses/${license}.pdf`}
                     target="_blank"
@@ -88,7 +88,7 @@ export default function Certifications() {
               >
                 <div className="flex-grow">
                   <FileText className="w-6 h-6 text-primary-600 dark:text-primary-400 mb-sm" />
-                  <h3 className="text-body font-semibold mb-xs">{t(`certifications.certifications.${cert}.title`)}</h3>
+                  <h3 className="text-body font-semibold mb-xs text-neutral-900 dark:text-neutral-100">{t(`certifications.certifications.${cert}.title`)}</h3>
                   <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
                     {t(`certifications.certifications.${cert}.organization`)}
                   </p>
@@ -130,7 +130,7 @@ export default function Certifications() {
               >
                 <div className="flex-grow">
                   <BookOpen className="w-5 h-5 text-primary-600 dark:text-primary-400 mb-xs" />
-                  <h3 className="text-body font-medium mb-xs">{t(`certifications.professional.${pd}.title`)}</h3>
+                  <h3 className="text-body font-medium mb-xs text-neutral-900 dark:text-neutral-100">{t(`certifications.professional.${pd}.title`)}</h3>
                   <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
                     {t(`certifications.professional.${pd}.organization`)}
                   </p>
