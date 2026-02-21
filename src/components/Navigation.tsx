@@ -78,12 +78,12 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
-            {navLinks.slice(0, 5).map((link) => (
+          <div className="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+            {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-body font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${
+                className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${
                   location.pathname === link.path
                     ? 'text-primary-600 dark:text-primary-400'
                     : 'text-neutral-700 dark:text-neutral-300'
