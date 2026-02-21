@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Moon, Sun, Menu, X, Globe, Download } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import NavDropdown from './NavDropdown';
 import {
   Tooltip,
   TooltipContent,
@@ -42,16 +43,34 @@ export default function Navigation() {
     localStorage.setItem('language', newLang);
   };
 
-  const navLinks = [
+  const groups = [
+    {
+      label: t('nav.aboutMeGroup'),
+      links: [
+        { path: '/about', label: t('nav.about') },
+        { path: '/philosophy', label: t('nav.philosophy') },
+        { path: '/journey', label: t('nav.journey') },
+        { path: '/impact', label: t('nav.impact') }
+      ]
+    },
+    {
+      label: t('nav.recognitionGroup'),
+      links: [
+        { path: '/awards', label: t('nav.awards') },
+        { path: '/testimonials', label: t('nav.testimonials') }
+      ]
+    },
+    {
+      label: t('nav.qualificationsGroup'),
+      links: [
+        { path: '/certifications', label: t('nav.certifications') },
+        { path: '/skills', label: t('nav.skills') }
+      ]
+    }
+  ];
+
+  const standaloneLinks = [
     { path: '/', label: t('nav.home') },
-    { path: '/about', label: t('nav.about') },
-    { path: '/philosophy', label: t('nav.philosophy') },
-    { path: '/journey', label: t('nav.journey') },
-    { path: '/impact', label: t('nav.impact') },
-    { path: '/awards', label: t('nav.awards') },
-    { path: '/certifications', label: t('nav.certifications') },
-    { path: '/skills', label: t('nav.skills') },
-    { path: '/testimonials', label: t('nav.testimonials') },
     { path: '/contact', label: t('nav.contact') }
   ];
 
@@ -79,25 +98,43 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
-            {navLinks.slice(0, 5).map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-body font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${
-                  location.pathname === link.path
-                    ? 'text-primary-600 dark:text-primary-400'
-                    : 'text-neutral-700 dark:text-neutral-300'
-                }`}
-              >
-                {link.label}
-                {location.pathname === link.path && (
-                  <motion.div
-                    layoutId="activeNav"
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400"
-                  />
-                )}
-              </Link>
+            <Link
+              to="/"
+              className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${
+                location.pathname === '/'
+                  ? 'text-primary-600 dark:text-primary-400'
+                  : 'text-neutral-700 dark:text-neutral-300'
+              }`}
+            >
+              {t('nav.home')}
+              {location.pathname === '/' && (
+                <motion.div
+                  layoutId="activeNav"
+                  className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400"
+                />
+              )}
+            </Link>
+
+            {groups.map((group) => (
+              <NavDropdown key={group.label} label={group.label} links={group.links} />
             ))}
+
+            <Link
+              to="/contact"
+              className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${
+                location.pathname === '/contact'
+                  ? 'text-primary-600 dark:text-primary-400'
+                  : 'text-neutral-700 dark:text-neutral-300'
+              }`}
+            >
+              {t('nav.contact')}
+              {location.pathname === '/contact' && (
+                <motion.div
+                  layoutId="activeNav"
+                  className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400"
+                />
+              )}
+            </Link>
           </div>
 
           {/* Actions */}
@@ -174,7 +211,7 @@ export default function Navigation() {
             data-testid="mobile-menu"
           >
             <div className="px-lg py-6 space-y-2">
-              {navLinks.map((link, index) => (
+              {[...standaloneLinks, ...groups.flatMap(g => g.links)].map((link, index) => (
                 <motion.div
                   key={link.path}
                   initial={{ opacity: 0, x: -20 }}
@@ -197,7 +234,7 @@ export default function Navigation() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.05 }}
+                transition={{ delay: (standaloneLinks.length + groups.flatMap(g => g.links).length) * 0.05 }}
                 className="pt-4 px-4"
               >
                 <a

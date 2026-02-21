@@ -10,7 +10,11 @@
     "skills": "Skills & Expertise",
     "testimonials": "Testimonials",
     "contact": "Contact",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "viewCertificate": "View Certificate",
+    "aboutMeGroup": "About Me",
+    "qualificationsGroup": "Qualifications",
+    "recognitionGroup": "Recognition"
   },
   "home": {
     "hero": {
@@ -441,6 +445,10 @@
     },
     "links": {
       "downloadCV": "Download CV",
+    "viewCertificate": "View Certificate",
+    "aboutMeGroup": "About Me",
+    "qualificationsGroup": "Qualifications",
+    "recognitionGroup": "Recognition",
       "futureWriters": "Preparing Future Writers Project"
     }
   },
