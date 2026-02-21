@@ -11,7 +11,10 @@
     "testimonials": "بكلماتهم",
     "contact": "تواصل معي",
     "downloadCV": "تحميل السيرة الذاتية",
-    "viewCertificate": "عرض الشهادة"
+    "viewCertificate": "عرض الشهادة",
+    "aboutMeGroup": "عني",
+    "qualificationsGroup": "المؤهلات",
+    "recognitionGroup": "التقدير"
   },
   "home": {
     "hero": {
@@ -442,6 +445,9 @@
     "links": {
       "downloadCV": "تحميل السيرة الذاتية",
     "viewCertificate": "عرض الشهادة",
+    "aboutMeGroup": "عني",
+    "qualificationsGroup": "المؤهلات",
+    "recognitionGroup": "التقدير",
       "futureWriters": "مشروع إعداد كُتّاب المستقبل"
     }
   },
