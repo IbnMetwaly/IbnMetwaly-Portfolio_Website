@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Award, FileText, BookOpen } from 'lucide-react';
+import { Award, FileText, BookOpen, ExternalLink } from 'lucide-react';
 
 export default function Certifications() {
   const { t } = useTranslation();
@@ -40,18 +40,31 @@ export default function Certifications() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                className="bg-gradient-to-br from-accent-50 to-neutral-50 dark:from-accent-900 dark:to-background-dark-elevated p-lg rounded-lg border-l-4 border-accent-500"
+                className="flex flex-col bg-gradient-to-br from-accent-50 to-neutral-50 dark:from-accent-900 dark:to-background-dark-elevated p-lg rounded-lg border-l-4 border-accent-500"
               >
-                <Award className="w-8 h-8 text-accent-600 dark:text-accent-400 mb-sm" />
-                <h3 className="text-h3 font-semibold mb-xs">{t(`certifications.licenses.${license}.title`)}</h3>
-                {t(`certifications.licenses.${license}.organization`) && (
-                  <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
-                    {t(`certifications.licenses.${license}.organization`)}
+                <div className="flex-grow">
+                  <Award className="w-8 h-8 text-accent-600 dark:text-accent-400 mb-sm" />
+                  <h3 className="text-h3 font-semibold mb-xs">{t(`certifications.licenses.${license}.title`)}</h3>
+                  {t(`certifications.licenses.${license}.organization`) && (
+                    <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
+                      {t(`certifications.licenses.${license}.organization`)}
+                    </p>
+                  )}
+                  <p className="text-small text-primary-600 dark:text-primary-400 font-semibold mb-md">
+                    {t(`certifications.licenses.${license}.year`)}
                   </p>
-                )}
-                <p className="text-small text-primary-600 dark:text-primary-400 font-semibold">
-                  {t(`certifications.licenses.${license}.year`)}
-                </p>
+                </div>
+                <div className="pt-sm border-t border-accent-200 dark:border-accent-800">
+                  <a
+                    href={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/licenses/${license}.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group"
+                  >
+                    <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    <span>{t('nav.viewCertificate')}</span>
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -71,16 +84,29 @@ export default function Certifications() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-background-dark-surface p-lg rounded-lg hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
+                className="flex flex-col bg-white dark:bg-background-dark-surface p-lg rounded-lg hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
               >
-                <FileText className="w-6 h-6 text-primary-600 dark:text-primary-400 mb-sm" />
-                <h3 className="text-body font-semibold mb-xs">{t(`certifications.certifications.${cert}.title`)}</h3>
-                <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
-                  {t(`certifications.certifications.${cert}.organization`)}
-                </p>
-                <p className="text-small text-primary-600 dark:text-primary-400 font-semibold">
-                  {t(`certifications.certifications.${cert}.year`)}
-                </p>
+                <div className="flex-grow">
+                  <FileText className="w-6 h-6 text-primary-600 dark:text-primary-400 mb-sm" />
+                  <h3 className="text-body font-semibold mb-xs">{t(`certifications.certifications.${cert}.title`)}</h3>
+                  <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
+                    {t(`certifications.certifications.${cert}.organization`)}
+                  </p>
+                  <p className="text-small text-primary-600 dark:text-primary-400 font-semibold mb-md">
+                    {t(`certifications.certifications.${cert}.year`)}
+                  </p>
+                </div>
+                <div className="pt-sm border-t border-neutral-100 dark:border-neutral-800">
+                  <a
+                    href={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/core/${cert}.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group"
+                  >
+                    <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    <span>{t('nav.viewCertificate')}</span>
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -100,16 +126,29 @@ export default function Certifications() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ delay: index * 0.05 }}
-                className="bg-neutral-50 dark:bg-background-dark-elevated p-md rounded-lg"
+                className="flex flex-col bg-neutral-50 dark:bg-background-dark-elevated p-md rounded-lg"
               >
-                <BookOpen className="w-5 h-5 text-primary-600 dark:text-primary-400 mb-xs" />
-                <h3 className="text-body font-medium mb-xs">{t(`certifications.professional.${pd}.title`)}</h3>
-                <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
-                  {t(`certifications.professional.${pd}.organization`)}
-                </p>
-                <p className="text-small text-primary-600 dark:text-primary-400">
-                  {t(`certifications.professional.${pd}.year`)}
-                </p>
+                <div className="flex-grow">
+                  <BookOpen className="w-5 h-5 text-primary-600 dark:text-primary-400 mb-xs" />
+                  <h3 className="text-body font-medium mb-xs">{t(`certifications.professional.${pd}.title`)}</h3>
+                  <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
+                    {t(`certifications.professional.${pd}.organization`)}
+                  </p>
+                  <p className="text-small text-primary-600 dark:text-primary-400 mb-md">
+                    {t(`certifications.professional.${pd}.year`)}
+                  </p>
+                </div>
+                <div className="pt-xs border-t border-neutral-200 dark:border-neutral-700">
+                  <a
+                    href={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/pd/${pd}.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 text-small font-medium transition-colors group"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
+                    <span>{t('nav.viewCertificate')}</span>
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>

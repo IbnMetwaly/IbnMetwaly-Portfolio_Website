@@ -10,7 +10,8 @@
     "skills": "Skills & Expertise",
     "testimonials": "Testimonials",
     "contact": "Contact",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "viewCertificate": "View Certificate"
   },
   "home": {
     "hero": {
@@ -441,6 +442,7 @@
     },
     "links": {
       "downloadCV": "Download CV",
+    "viewCertificate": "View Certificate",
       "futureWriters": "Preparing Future Writers Project"
     }
   },

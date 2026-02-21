@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Award, Trophy } from 'lucide-react';
+import { Trophy, ExternalLink } from 'lucide-react';
 
 export default function Awards() {
   const { t } = useTranslation();
@@ -37,7 +37,7 @@ export default function Awards() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-105 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
+                className="flex flex-col bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-105 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
               >
                 <div className="w-12 h-12 bg-accent-100 dark:bg-accent-900 rounded-lg flex items-center justify-center mb-md">
                   <Trophy className="w-6 h-6 text-accent-600 dark:text-accent-400" />
@@ -49,9 +49,20 @@ export default function Awards() {
                 <p className="text-small text-primary-600 dark:text-primary-400 font-semibold mb-sm">
                   {t(`awards.list.${award}.year`)}
                 </p>
-                <p className="text-small text-neutral-600 dark:text-neutral-400">
+                <p className="text-small text-neutral-600 dark:text-neutral-400 mb-md flex-grow">
                   {t(`awards.list.${award}.description`)}
                 </p>
+                <div className="mt-auto pt-md border-t border-neutral-100 dark:border-neutral-800">
+                  <a
+                    href={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/awards/${award}.pdf`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group"
+                  >
+                    <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
+                    <span>{t('nav.viewCertificate')}</span>
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>

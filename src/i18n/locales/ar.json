@@ -10,7 +10,8 @@
     "skills": "المهارات والخبرات",
     "testimonials": "بكلماتهم",
     "contact": "تواصل معي",
-    "downloadCV": "تحميل السيرة الذاتية"
+    "downloadCV": "تحميل السيرة الذاتية",
+    "viewCertificate": "عرض الشهادة"
   },
   "home": {
     "hero": {
@@ -440,6 +441,7 @@
     },
     "links": {
       "downloadCV": "تحميل السيرة الذاتية",
+    "viewCertificate": "عرض الشهادة",
       "futureWriters": "مشروع إعداد كُتّاب المستقبل"
     }
   },
