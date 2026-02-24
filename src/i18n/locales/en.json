@@ -242,39 +242,45 @@
         "title": "App Whisperer Award",
         "organization": "Al-Kharran School",
         "year": "2025",
-        "description": "Recognition for outstanding integration of educational technology"
+        "description": "Recognition for outstanding integration of educational technology",
+        "certificatePath": "awards/award1.pdf"
       },
       "award2": {
         "title": "Outstanding Teacher",
         "organization": "Emirates National Schools",
         "year": "2019",
-        "description": "Excellence in teaching and student engagement"
+        "description": "Excellence in teaching and student engagement",
+        "certificatePath": "awards/award2.pdf"
       },
       "award3": {
         "title": "Education Impact Leadership Award Nomination",
         "organization": "World Education Summit (WES)",
         "year": "2026",
         "location": "Dubai",
-        "description": "Nominated for exceptional leadership in education"
+        "description": "Nominated for exceptional leadership in education",
+        "certificatePath": "awards/award3.pdf"
       },
       "award4": {
         "title": "Excellence in Education Award Nomination",
         "organization": "Education 2.0 Conference",
         "year": "2025",
         "location": "Dubai",
-        "description": "Nominated for innovative teaching practices"
+        "description": "Nominated for innovative teaching practices",
+        "certificatePath": "awards/award4.pdf"
       },
       "award5": {
         "title": "BravoBravo Global Leader",
         "organization": "BravoBravo Platform",
         "year": "2024",
-        "description": "1st place globally among 180 schools with 68,000+ stories"
+        "description": "1st place globally among 180 schools with 68,000+ stories",
+        "certificatePath": "awards/award5.pdf"
       },
       "award6": {
         "title": "iReadArabic Excellence",
         "organization": "iReadArabic Platform",
         "year": "2024",
-        "description": "2nd place locally (100+ schools), 3rd place globally (300+ schools)"
+        "description": "2nd place locally (100+ schools), 3rd place globally (300+ schools)",
+        "certificatePath": "awards/award6.pdf"
       }
     }
   },
@@ -285,12 +291,14 @@
       "title": "Professional Licenses",
       "license1": {
         "title": "Educational Leadership License",
-        "year": "2025"
+        "year": "2025",
+        "certificatePath": "licenses/license1.pdf"
       },
       "license2": {
         "title": "Teacher's License",
         "organization": "Ministry of Education - UAE",
-        "year": "2022"
+        "year": "2022",
+        "certificatePath": "licenses/license2.pdf"
       }
     },
     "certifications": {
@@ -298,27 +306,32 @@
       "cert1": {
         "title": "Certified Microsoft Innovative Educator",
         "organization": "Microsoft Educator Center",
-        "year": "2020"
+        "year": "2020",
+        "certificatePath": "certifications/cert1.pdf"
       },
       "cert2": {
         "title": "eProve eleot 2.0 Observation Tool",
         "organization": "Cognia",
-        "year": "2021"
+        "year": "2021",
+        "certificatePath": "certifications/cert2.pdf"
       },
       "cert3": {
         "title": "Teaching Arabic as a Foreign Language",
         "organization": "International Center for Teaching Arabic",
-        "year": "2012"
+        "year": "2012",
+        "certificatePath": "certifications/cert3.pdf"
       },
       "cert4": {
         "title": "Basic Skills in Learning Arabic Language",
         "organization": "National Teachers Academy",
-        "year": "2018"
+        "year": "2018",
+        "certificatePath": "certifications/cert4.pdf"
       },
       "cert5": {
         "title": "Pedagogy and Teaching Skills",
         "organization": "Ain Shams University",
-        "year": "2015"
+        "year": "2015",
+        "certificatePath": "certifications/cert5.pdf"
       }
     },
     "professional": {
@@ -326,37 +339,44 @@
       "pd1": {
         "title": "Kagan Cooperative Learning Strategies",
         "organization": "Kagan Publishing & PD",
-        "year": "2024"
+        "year": "2024",
+        "certificatePath": "professional-development/pd1.pdf"
       },
       "pd2": {
         "title": "Investigating Inquiry (Category 3)",
         "organization": "IB Global Center",
-        "year": "2022"
+        "year": "2022",
+        "certificatePath": "professional-development/pd2.pdf"
       },
       "pd3": {
         "title": "Local and Global Inquirers (Category 2)",
         "organization": "IB Global Center",
-        "year": "2022"
+        "year": "2022",
+        "certificatePath": "professional-development/pd3.pdf"
       },
       "pd4": {
         "title": "PYP Arabic Concept Based",
         "organization": "National Teachers Academy",
-        "year": "2018"
+        "year": "2018",
+        "certificatePath": "professional-development/pd4.pdf"
       },
       "pd5": {
         "title": "Making PYP Happen in Classroom (Category 1)",
         "organization": "IB Global Center",
-        "year": "2017"
+        "year": "2017",
+        "certificatePath": "professional-development/pd5.pdf"
       },
       "pd6": {
         "title": "English Conversation Course",
         "organization": "Canadian International College in Cairo",
-        "year": "2010"
+        "year": "2010",
+        "certificatePath": "professional-development/pd6.pdf"
       },
       "pd7": {
         "title": "50+ Modules Completed",
         "organization": "Microsoft Learn Platform",
-        "year": "Ongoing"
+        "year": "Ongoing",
+        "certificatePath": "professional-development/pd7.pdf"
       }
     }
   },
@@ -418,6 +438,256 @@
       "parents": "Parents",
       "students": "Students",
       "colleagues": "Colleagues"
+    },
+    "list": {
+      "testimony1": {
+        "name": "Testimonial 1",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony1.pdf"
+      },
+      "testimony2": {
+        "name": "Testimonial 2",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony2.pdf"
+      },
+      "testimony3": {
+        "name": "Testimonial 3",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony3.png"
+      },
+      "testimony4": {
+        "name": "Testimonial 4",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony4.pdf"
+      },
+      "testimony5": {
+        "name": "Testimonial 5",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony5.pdf"
+      },
+      "testimony6": {
+        "name": "Testimonial 6",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony6.png"
+      },
+      "testimony7": {
+        "name": "Testimonial 7",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony7.pdf"
+      },
+      "testimony8": {
+        "name": "Testimonial 8",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony8.pdf"
+      },
+      "testimony9": {
+        "name": "Testimonial 9",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony9.png"
+      },
+      "testimony10": {
+        "name": "Testimonial 10",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony10.pdf"
+      },
+      "testimony11": {
+        "name": "Testimonial 11",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony11.pdf"
+      },
+      "testimony12": {
+        "name": "Testimonial 12",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony12.png"
+      },
+      "testimony13": {
+        "name": "Testimonial 13",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony13.pdf"
+      },
+      "testimony14": {
+        "name": "Testimonial 14",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony14.pdf"
+      },
+      "testimony15": {
+        "name": "Testimonial 15",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony15.png"
+      },
+      "testimony16": {
+        "name": "Testimonial 16",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony16.pdf"
+      },
+      "testimony17": {
+        "name": "Testimonial 17",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony17.pdf"
+      },
+      "testimony18": {
+        "name": "Testimonial 18",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony18.png"
+      },
+      "testimony19": {
+        "name": "Testimonial 19",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony19.pdf"
+      },
+      "testimony20": {
+        "name": "Testimonial 20",
+        "role": "Student / Colleague / Parent",
+        "school": "ENS UAE",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony20.pdf"
+      },
+      "testimony21": {
+        "name": "Testimonial 21",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony21.png"
+      },
+      "testimony22": {
+        "name": "Testimonial 22",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony22.pdf"
+      },
+      "testimony23": {
+        "name": "Testimonial 23",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony23.pdf"
+      },
+      "testimony24": {
+        "name": "Testimonial 24",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony24.png"
+      },
+      "testimony25": {
+        "name": "Testimonial 25",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony25.pdf"
+      },
+      "testimony26": {
+        "name": "Testimonial 26",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony26.pdf"
+      },
+      "testimony27": {
+        "name": "Testimonial 27",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony27.png"
+      },
+      "testimony28": {
+        "name": "Testimonial 28",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony28.pdf"
+      },
+      "testimony29": {
+        "name": "Testimonial 29",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony29.pdf"
+      },
+      "testimony30": {
+        "name": "Testimonial 30",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony30.png"
+      },
+      "testimony31": {
+        "name": "Testimonial 31",
+        "role": "Student / Colleague / Parent",
+        "school": "SIS Egypt",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony31.pdf"
+      }
     }
   },
   "contact": {
@@ -445,10 +715,10 @@
     },
     "links": {
       "downloadCV": "Download CV",
-    "viewCertificate": "View Certificate",
-    "aboutMeGroup": "About Me",
-    "qualificationsGroup": "Qualifications",
-    "recognitionGroup": "Recognition",
+      "viewCertificate": "View Certificate",
+      "aboutMeGroup": "About Me",
+      "qualificationsGroup": "Qualifications",
+      "recognitionGroup": "Recognition",
       "futureWriters": "Preparing Future Writers Project"
     }
   },

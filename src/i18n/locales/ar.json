@@ -241,39 +241,45 @@
         "title": "جائزة App Whisperer",
         "organization": "مدرسة الخران",
         "year": "2025",
-        "description": "تقدير للتكامل المتميز للتكنولوجيا التعليمية"
+        "description": "تقدير للتكامل المتميز للتكنولوجيا التعليمية",
+        "certificatePath": "awards/award1.pdf"
       },
       "award2": {
         "title": "معلم متميز",
         "organization": "مدارس الإمارات الوطنية",
         "year": "2019",
-        "description": "التميز في التدريس ومشاركة الطلاب"
+        "description": "التميز في التدريس ومشاركة الطلاب",
+        "certificatePath": "awards/award2.pdf"
       },
       "award3": {
         "title": "ترشيح جائزة قيادة الأثر التعليمي",
         "organization": "قمة التعليم العالمية (WES)",
         "year": "2026",
         "location": "دبي",
-        "description": "مرشح للقيادة الاستثنائية في التعليم"
+        "description": "مرشح للقيادة الاستثنائية في التعليم",
+        "certificatePath": "awards/award3.pdf"
       },
       "award4": {
         "title": "ترشيح جائزة التميز في التعليم",
         "organization": "مؤتمر التعليم 2.0",
         "year": "2025",
         "location": "دبي",
-        "description": "مرشح لممارسات التدريس المبتكرة"
+        "description": "مرشح لممارسات التدريس المبتكرة",
+        "certificatePath": "awards/award4.pdf"
       },
       "award5": {
         "title": "القائد العالمي برافوبرافو",
         "organization": "منصة برافوبرافو",
         "year": "2024",
-        "description": "المركز الأول عالميًا من بين 180 مدرسة مع أكثر من 68000 قصة"
+        "description": "المركز الأول عالميًا من بين 180 مدرسة مع أكثر من 68000 قصة",
+        "certificatePath": "awards/award5.pdf"
       },
       "award6": {
         "title": "التميز في أقرأ عربي",
         "organization": "منصة أقرأ عربي",
         "year": "2024",
-        "description": "المركز الثاني محليًا (أكثر من 100 مدرسة)، المركز الثالث عالميًا (أكثر من 300 مدرسة)"
+        "description": "المركز الثاني محليًا (أكثر من 100 مدرسة)، المركز الثالث عالميًا (أكثر من 300 مدرسة)",
+        "certificatePath": "awards/award6.pdf"
       }
     }
   },
@@ -284,12 +290,14 @@
       "title": "الرخص المهنية",
       "license1": {
         "title": "رخصة القيادة التعليمية",
-        "year": "2025"
+        "year": "2025",
+        "certificatePath": "licenses/license1.pdf"
       },
       "license2": {
         "title": "رخصة المعلم",
         "organization": "وزارة التربية والتعليم - الإمارات",
-        "year": "2022"
+        "year": "2022",
+        "certificatePath": "licenses/license2.pdf"
       }
     },
     "certifications": {
@@ -297,27 +305,32 @@
       "cert1": {
         "title": "معلم مبتكر معتمد من مايكروسوفت",
         "organization": "مركز معلمي مايكروسوفت",
-        "year": "2020"
+        "year": "2020",
+        "certificatePath": "certifications/cert1.pdf"
       },
       "cert2": {
         "title": "أداة ملاحظة eProve eleot 2.0",
         "organization": "كوجنيا",
-        "year": "2021"
+        "year": "2021",
+        "certificatePath": "certifications/cert2.pdf"
       },
       "cert3": {
         "title": "تدريس اللغة العربية للناطقين بغيرها",
         "organization": "المركز الدولي لتعليم اللغة العربية",
-        "year": "2012"
+        "year": "2012",
+        "certificatePath": "certifications/cert3.pdf"
       },
       "cert4": {
         "title": "المهارات الأساسية في تعلم اللغة العربية",
         "organization": "أكاديمية المعلمين الوطنية",
-        "year": "2018"
+        "year": "2018",
+        "certificatePath": "certifications/cert4.pdf"
       },
       "cert5": {
         "title": "التربية ومهارات التدريس",
         "organization": "جامعة عين شمس",
-        "year": "2015"
+        "year": "2015",
+        "certificatePath": "certifications/cert5.pdf"
       }
     },
     "professional": {
@@ -325,37 +338,44 @@
       "pd1": {
         "title": "استراتيجيات التعلم التعاوني كاغان",
         "organization": "كاغان للنشر والتطوير المهني",
-        "year": "2024"
+        "year": "2024",
+        "certificatePath": "professional-development/pd1.pdf"
       },
       "pd2": {
         "title": "استقصاء الاستفسار (الفئة 3)",
         "organization": "مركز البكالوريا الدولية العالمي",
-        "year": "2022"
+        "year": "2022",
+        "certificatePath": "professional-development/pd2.pdf"
       },
       "pd3": {
         "title": "الباحثون المحليون والعالميون (الفئة 2)",
         "organization": "مركز البكالوريا الدولية العالمي",
-        "year": "2022"
+        "year": "2022",
+        "certificatePath": "professional-development/pd3.pdf"
       },
       "pd4": {
         "title": "اللغة العربية المفاهيمية في برنامج السنوات الابتدائية",
         "organization": "أكاديمية المعلمين الوطنية",
-        "year": "2018"
+        "year": "2018",
+        "certificatePath": "professional-development/pd4.pdf"
       },
       "pd5": {
         "title": "تطبيق برنامج السنوات الابتدائية في الفصل (الفئة 1)",
         "organization": "مركز البكالوريا الدولية العالمي",
-        "year": "2017"
+        "year": "2017",
+        "certificatePath": "professional-development/pd5.pdf"
       },
       "pd6": {
         "title": "دورة المحادثة الإنجليزية",
         "organization": "الكلية الكندية الدولية بالقاهرة",
-        "year": "2010"
+        "year": "2010",
+        "certificatePath": "professional-development/pd6.pdf"
       },
       "pd7": {
         "title": "أكثر من 50 وحدة مكتملة",
         "organization": "منصة التعلم من مايكروسوفت",
-        "year": "مستمر"
+        "year": "مستمر",
+        "certificatePath": "professional-development/pd7.pdf"
       }
     }
   },
@@ -417,6 +437,256 @@
       "parents": "أولياء الأمور",
       "students": "الطلاب",
       "colleagues": "الزملاء"
+    },
+    "list": {
+      "testimony1": {
+        "name": "شهادة 1",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony1.pdf"
+      },
+      "testimony2": {
+        "name": "شهادة 2",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony2.pdf"
+      },
+      "testimony3": {
+        "name": "شهادة 3",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony3.png"
+      },
+      "testimony4": {
+        "name": "شهادة 4",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony4.pdf"
+      },
+      "testimony5": {
+        "name": "شهادة 5",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony5.pdf"
+      },
+      "testimony6": {
+        "name": "شهادة 6",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony6.png"
+      },
+      "testimony7": {
+        "name": "شهادة 7",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony7.pdf"
+      },
+      "testimony8": {
+        "name": "شهادة 8",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony8.pdf"
+      },
+      "testimony9": {
+        "name": "شهادة 9",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony9.png"
+      },
+      "testimony10": {
+        "name": "شهادة 10",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony10.pdf"
+      },
+      "testimony11": {
+        "name": "شهادة 11",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony11.pdf"
+      },
+      "testimony12": {
+        "name": "شهادة 12",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony12.png"
+      },
+      "testimony13": {
+        "name": "شهادة 13",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony13.pdf"
+      },
+      "testimony14": {
+        "name": "شهادة 14",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony14.pdf"
+      },
+      "testimony15": {
+        "name": "شهادة 15",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony15.png"
+      },
+      "testimony16": {
+        "name": "شهادة 16",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony16.pdf"
+      },
+      "testimony17": {
+        "name": "شهادة 17",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony17.pdf"
+      },
+      "testimony18": {
+        "name": "شهادة 18",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony18.png"
+      },
+      "testimony19": {
+        "name": "شهادة 19",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony19.pdf"
+      },
+      "testimony20": {
+        "name": "شهادة 20",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "مدارس الإمارات الوطنية",
+        "year": "2017-2024",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony20.pdf"
+      },
+      "testimony21": {
+        "name": "شهادة 21",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony21.png"
+      },
+      "testimony22": {
+        "name": "شهادة 22",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony22.pdf"
+      },
+      "testimony23": {
+        "name": "شهادة 23",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony23.pdf"
+      },
+      "testimony24": {
+        "name": "شهادة 24",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony24.png"
+      },
+      "testimony25": {
+        "name": "شهادة 25",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony25.pdf"
+      },
+      "testimony26": {
+        "name": "شهادة 26",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony26.pdf"
+      },
+      "testimony27": {
+        "name": "شهادة 27",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony27.png"
+      },
+      "testimony28": {
+        "name": "شهادة 28",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony28.pdf"
+      },
+      "testimony29": {
+        "name": "شهادة 29",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony29.pdf"
+      },
+      "testimony30": {
+        "name": "شهادة 30",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "png",
+        "certificatePath": "testimonials/testimony30.png"
+      },
+      "testimony31": {
+        "name": "شهادة 31",
+        "role": "طالب / زميل / ولي أمر",
+        "school": "الفرسان مصر",
+        "year": "2013-2017",
+        "fileType": "pdf",
+        "certificatePath": "testimonials/testimony31.pdf"
+      }
     }
   },
   "contact": {
@@ -444,10 +714,10 @@
     },
     "links": {
       "downloadCV": "تحميل السيرة الذاتية",
-    "viewCertificate": "عرض الشهادة",
-    "aboutMeGroup": "عني",
-    "qualificationsGroup": "المؤهلات",
-    "recognitionGroup": "التقدير",
+      "viewCertificate": "عرض الشهادة",
+      "aboutMeGroup": "عني",
+      "qualificationsGroup": "المؤهلات",
+      "recognitionGroup": "التقدير",
       "futureWriters": "مشروع إعداد كُتّاب المستقبل"
     }
   },

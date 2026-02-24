@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Trophy, ExternalLink } from 'lucide-react';
+import CertificateModal from '../components/CertificateModal';
 
 export default function Awards() {
   const { t } = useTranslation();
@@ -53,15 +54,15 @@ export default function Awards() {
                   {t(`awards.list.${award}.description`)}
                 </p>
                 <div className="mt-auto pt-md border-t border-neutral-100 dark:border-neutral-800">
-                  <a
-                    href={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/awards/${award}.pdf`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group"
-                  >
-                    <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
-                    <span>{t('nav.viewCertificate')}</span>
-                  </a>
+                  <CertificateModal
+                    certificateUrl={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/Recognition/${t(`awards.list.${award}.certificatePath`, { defaultValue: `awards/${award}.pdf` })}`}
+                    trigger={
+                      <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
+                        <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
+                        <span>{t('nav.viewCertificate')}</span>
+                      </button>
+                    }
+                  />
                 </div>
               </motion.div>
             ))}
