@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Trophy, ExternalLink, Loader2, Award } from 'lucide-react';
 import CertificateModal from '../components/CertificateModal';
 import { supabase } from '../lib/supabase';
+import { MasonryGrid } from '../components/MasonryGrid';
 
 export default function Awards() {
   const { t } = useTranslation();
@@ -98,7 +99,7 @@ export default function Awards() {
             ))}
           </div>
 
-          {/* River Carousel Section */}
+          {/* Testimonials Masonry Grid Section */}
           <div className="mt-24">
             <motion.div
               initial="hidden"
@@ -108,7 +109,7 @@ export default function Awards() {
               className="text-center mb-12"
             >
               <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse mb-2">
-                <Award className="w-5 h-5 text-primary-500" />
+                < Award className="w-5 h-5 text-primary-500" />
                 <span className="text-small font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest">{t('nav.testimonials')}</span>
               </div>
               <h2 className="text-h2 font-bold text-neutral-900 dark:text-neutral-100 italic">Voices of impact from our community</h2>
@@ -119,37 +120,25 @@ export default function Awards() {
                 <Loader2 className="w-8 h-8 text-primary-500 animate-spin" />
               </div>
             ) : testimonials.length > 0 ? (
-              <div className="relative overflow-hidden w-full py-8">
-                {/* Gradient Masks */}
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white dark:from-background-dark-surface to-transparent z-10" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white dark:from-background-dark-surface to-transparent z-10" />
-
-                <motion.div
-                  className="flex items-center space-x-12 rtl:space-x-reverse"
-                  animate={{
-                    x: [0, -2000] // Roughly width adjustment, will loop infinitely
-                  }}
-                  transition={{
-                    duration: 40,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  style={{ width: 'fit-content' }}
-                >
-                  {[...testimonials, ...testimonials, ...testimonials].map((file, idx) => {
+              <div className="px-lg">
+                <MasonryGrid columns={2} gap={6} className="max-w-6xl mx-auto">
+                  {testimonials.map((file, idx) => {
                     const fullUrl = `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/Recognition/Testimonials/${encodeURIComponent(file.name)}`;
                     return (
-                      <div key={`${file.name}-${idx}`} className="flex-shrink-0">
+                      <div key={`${file.name}-${idx}`} className="group relative overflow-hidden rounded-xl">
                         <img
                           src={fullUrl}
                           alt={file.name}
-                          className="h-32 md:h-40 w-auto object-contain transition-all duration-500 hover:scale-110 filter dark:brightness-90 hover:brightness-100"
+                          className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 cursor-pointer"
                           loading="lazy"
+                          onClick={() => window.open(fullUrl, '_blank')}
                         />
+                        {/* Subtle overlay on hover */}
+                        <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/5 transition-colors duration-normal pointer-events-none" />
                       </div>
                     );
                   })}
-                </motion.div>
+                </MasonryGrid>
               </div>
             ) : null}
           </div>
