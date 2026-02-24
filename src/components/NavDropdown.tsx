@@ -40,7 +40,7 @@ export default function NavDropdown({ label, links }: NavDropdownProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-background-dark-surface rounded-md shadow-lg border border-neutral-200 dark:border-neutral-800 py-2 z-50"
+            className="absolute top-full left-0 mt-2 w-56 backdrop-blur-md bg-white/90 dark:bg-neutral-900/90 rounded-md shadow-lg border border-neutral-200 dark:border-neutral-800 py-2 z-50"
           >
             {links.map((link) => (
               <Link

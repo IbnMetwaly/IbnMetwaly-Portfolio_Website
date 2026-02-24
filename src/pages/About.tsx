@@ -109,7 +109,7 @@ export default function About() {
                 <p className="text-body text-neutral-700 dark:text-neutral-300 mb-xs">
                   {t('about.education.university')}
                 </p>
-                <p className="text-small text-neutral-500 dark:text-neutral-400">
+                <p className="text-small text-neutral-600 dark:text-neutral-400">
                   {t('about.education.years')}
                 </p>
               </div>

@@ -62,7 +62,7 @@ export default function Impact() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-primary-900 dark:to-background-dark-elevated p-xl rounded-lg text-center hover:scale-105 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
+                className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-primary-900 dark:to-background-dark-elevated p-xl rounded-lg text-center hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl-light dark:hover:shadow-lg-dark transition-all duration-normal"
               >
                 <metric.icon className="w-16 h-16 mx-auto mb-md text-primary-500 dark:text-primary-400" />
                 <div className="text-hero font-bold text-primary-600 dark:text-primary-400 mb-sm">

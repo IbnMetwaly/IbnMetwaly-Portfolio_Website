@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-h3 text-neutral-900 dark:text-neutral-100 mb-md">{t('nav.home')}</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-900 dark:text-neutral-100 mb-md">{t('footer.quickLinks', 'Quick Links')}</h3>
             <ul className="space-y-2">
               {[
                 { path: '/about', label: t('nav.about') },
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-h3 text-neutral-900 dark:text-neutral-100 mb-md">{t('contact.info.title')}</h3>
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-900 dark:text-neutral-100 mb-md">{t('contact.info.title')}</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-3 rtl:space-x-reverse text-small">
                 <Mail className="w-4 h-4 text-primary-600 dark:text-primary-400" />
@@ -83,7 +83,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-xl border-t border-neutral-200 dark:border-neutral-700">
-          <p className="text-center text-small text-neutral-500 dark:text-neutral-400">
+          <p className="text-center text-small text-neutral-600 dark:text-neutral-400">
             {t('footer.copyright')}
           </p>
         </div>

@@ -37,7 +37,7 @@ export default function Awards() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="flex flex-col bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-105 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
+                className="flex flex-col bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl-light dark:hover:shadow-lg-dark transition-all duration-normal"
               >
                 <div className="w-12 h-12 bg-accent-100 dark:bg-accent-900 rounded-lg flex items-center justify-center mb-md">
                   <Trophy className="w-6 h-6 text-accent-600 dark:text-accent-400" />

@@ -77,13 +77,14 @@ export default function Contact() {
       {/* Contact Form & Info */}
       <section className="py-2xl bg-white dark:bg-background-dark-surface">
         <div className="max-w-container mx-auto px-lg">
-          <div className="grid lg:grid-cols-2 gap-xl">
+          <div className="grid lg:grid-cols-3 gap-xl">
             {/* Contact Form */}
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
+              className="lg:col-span-2"
             >
               <h2 className="text-h2 font-bold text-neutral-900 dark:text-neutral-100 mb-xl">{t('contact.form.submit')}</h2>
               <form onSubmit={handleSubmit} className="space-y-lg">
@@ -153,11 +154,10 @@ export default function Contact() {
 
                 {submitStatus && (
                   <div
-                    className={`p-lg rounded-md ${
-                      submitStatus === 'success'
+                    className={`p-lg rounded-md ${submitStatus === 'success'
                         ? 'bg-semantic-success/10 text-semantic-success'
                         : 'bg-semantic-error/10 text-semantic-error'
-                    }`}
+                      }`}
                   >
                     {submitStatus === 'success'
                       ? t('contact.form.success')
@@ -185,6 +185,7 @@ export default function Contact() {
               viewport={{ once: true }}
               variants={fadeInUp}
               transition={{ delay: 0.2 }}
+              className="lg:col-span-1"
             >
               <div className="bg-neutral-50 dark:bg-background-dark-elevated p-xl rounded-lg">
                 <h2 className="text-h2 font-bold text-neutral-900 dark:text-neutral-100 mb-xl">{t('contact.info.title')}</h2>

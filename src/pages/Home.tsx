@@ -19,7 +19,7 @@ function AnimatedCounter({ end, duration = 2000, suffix = '' }: { end: number; d
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      
+
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(end * easeOutQuart));
 
@@ -97,8 +97,9 @@ export default function Home() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-3xl">
-        <div className="max-w-container mx-auto px-lg">
+      <section className="relative bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-100 via-neutral-50 to-teal-50 dark:from-primary-900/20 dark:via-background-dark-surface dark:to-background-dark-page py-3xl overflow-hidden">
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))] bg-[size:30px_30px]"></div>
+        <div className="max-w-container mx-auto px-lg relative z-10">
           <div className="grid lg:grid-cols-2 gap-xl items-center">
             <motion.div
               initial="hidden"
@@ -106,7 +107,7 @@ export default function Home() {
               variants={fadeInUp}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="font-latin text-hero md:text-h1-mobile font-bold text-neutral-900 dark:text-neutral-50 mb-md">
+              <h1 className="font-latin text-hero md:text-h1-mobile font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-teal-400 dark:from-primary-400 dark:to-teal-300 mb-md">
                 {t('home.hero.name')}
               </h1>
               <h2 className="font-latin text-h2 md:text-h2-mobile font-semibold text-primary-600 dark:text-primary-400 mb-md">
@@ -169,7 +170,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="bg-neutral-50 dark:bg-background-dark-elevated p-xl rounded-lg text-center hover:scale-105 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
+                className="bg-neutral-50 dark:bg-background-dark-elevated p-xl rounded-lg text-center hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl-light dark:hover:shadow-lg-dark transition-all duration-normal"
               >
                 <stat.icon className="w-16 h-16 mx-auto mb-md text-primary-500 dark:text-primary-400" />
                 <div className="text-hero font-bold text-primary-600 dark:text-primary-400 mb-sm">
@@ -209,7 +210,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 variants={fadeInUp}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-105 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-normal"
+                className="bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl-light dark:hover:shadow-lg-dark transition-all duration-normal"
               >
                 <div className="w-12 h-12 bg-accent-100 dark:bg-accent-900 rounded-lg flex items-center justify-center mb-md">
                   <Award className="w-6 h-6 text-accent-600 dark:text-accent-400" />
