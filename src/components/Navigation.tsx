@@ -54,10 +54,9 @@ export default function Navigation() {
       ]
     },
     {
-      label: t('nav.recognitionGroup'),
+      label: t('nav.awards&recognitionGroup'),
       links: [
-        { path: '/awards', label: t('nav.awards') },
-        { path: '/testimonials', label: t('nav.testimonials') }
+        { path: '/awards', label: t('nav.awards') }
       ]
     },
     {
@@ -76,11 +75,10 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 ${i18n.language === 'ar' ? 'right-0 left-0' : 'left-0 right-0'} z-50 transition-all duration-normal ${
-        isScrolled
+      className={`fixed top-0 ${i18n.language === 'ar' ? 'right-0 left-0' : 'left-0 right-0'} z-50 transition-all duration-normal ${isScrolled
           ? 'bg-white/90 dark:bg-background-dark-page/90 backdrop-blur-xl shadow-sm-light dark:shadow-sm-dark'
           : 'bg-white/80 dark:bg-background-dark-page/80 backdrop-blur-md'
-      }`}
+        }`}
     >
       <div className="max-w-container mx-auto px-lg">
         <div className="flex items-center justify-between h-20">
@@ -100,11 +98,10 @@ export default function Navigation() {
           <div className="hidden lg:flex items-center space-x-6 rtl:space-x-reverse">
             <Link
               to="/"
-              className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${
-                location.pathname === '/'
+              className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${location.pathname === '/'
                   ? 'text-primary-600 dark:text-primary-400'
                   : 'text-neutral-700 dark:text-neutral-300'
-              }`}
+                }`}
             >
               {t('nav.home')}
               {location.pathname === '/' && (
@@ -121,11 +118,10 @@ export default function Navigation() {
 
             <Link
               to="/contact"
-              className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${
-                location.pathname === '/contact'
+              className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${location.pathname === '/contact'
                   ? 'text-primary-600 dark:text-primary-400'
                   : 'text-neutral-700 dark:text-neutral-300'
-              }`}
+                }`}
             >
               {t('nav.contact')}
               {location.pathname === '/contact' && (
@@ -221,11 +217,10 @@ export default function Navigation() {
                   <Link
                     to={link.path}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`block px-4 py-3 rounded-md font-medium transition-colors duration-fast ${
-                      location.pathname === link.path
+                    className={`block px-4 py-3 rounded-md font-medium transition-colors duration-fast ${location.pathname === link.path
                         ? 'bg-primary-50 dark:bg-primary-900 text-primary-600 dark:text-primary-400'
                         : 'hover:bg-neutral-100 dark:hover:bg-neutral-800'
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </Link>

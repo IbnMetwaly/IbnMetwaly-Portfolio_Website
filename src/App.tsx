@@ -14,7 +14,6 @@ import Impact from './pages/Impact';
 import Awards from './pages/Awards';
 import Certifications from './pages/Certifications';
 import Skills from './pages/Skills';
-import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 
 function AppContent() {
@@ -40,8 +39,8 @@ function AppContent() {
             <Route path="/awards" element={<Awards />} />
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/skills" element={<Skills />} />
-            <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/testimonials" element={<Awards />} />
           </Routes>
         </main>
         <Footer />

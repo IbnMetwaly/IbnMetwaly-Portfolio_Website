@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Trophy, ExternalLink } from 'lucide-react';
+import { Trophy, ExternalLink, Loader2, Award } from 'lucide-react';
 import CertificateModal from '../components/CertificateModal';
+import { supabase } from '../lib/supabase';
 
 export default function Awards() {
   const { t } = useTranslation();
+  const [testimonials, setTestimonials] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -13,6 +16,33 @@ export default function Awards() {
   };
 
   const awards = ['award1', 'award2', 'award3', 'award4', 'award5', 'award6'];
+
+  useEffect(() => {
+    async function fetchTestimonials() {
+      try {
+        const { data, error } = await supabase.storage
+          .from('Recognition')
+          .list('Testimonials', {
+            limit: 100,
+            offset: 0,
+            sortBy: { column: 'name', order: 'asc' }
+          });
+
+        if (error) {
+          console.error('Error fetching testimonials:', error);
+        } else if (data) {
+          const files = data.filter(file => file.name && file.name !== '.emptyFolderPlaceholder');
+          setTestimonials(files);
+        }
+      } catch (err) {
+        console.error('Unexpected error fetching testimonials:', err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchTestimonials();
+  }, []);
 
   return (
     <div className="pt-20">
@@ -40,8 +70,8 @@ export default function Awards() {
                 transition={{ delay: index * 0.1 }}
                 className="flex flex-col bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl-light dark:hover:shadow-lg-dark transition-all duration-normal"
               >
-                <div className="w-12 h-12 bg-accent-100 dark:bg-accent-900 rounded-lg flex items-center justify-center mb-md">
-                  <Trophy className="w-6 h-6 text-accent-600 dark:text-accent-400" />
+                <div className="w-24 h-24 bg-accent-100 dark:bg-accent-900 rounded-lg flex items-center justify-center mb-md">
+                  <Trophy className="w-12 h-12 text-accent-600 dark:text-accent-400" />
                 </div>
                 <h3 className="text-h3 font-semibold text-neutral-900 dark:text-neutral-100 mb-sm">{t(`awards.list.${award}.title`)}</h3>
                 <p className="text-body text-neutral-700 dark:text-neutral-300 mb-xs">
@@ -66,6 +96,62 @@ export default function Awards() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* River Carousel Section */}
+          <div className="mt-24">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="text-center mb-12"
+            >
+              <div className="flex items-center justify-center space-x-2 rtl:space-x-reverse mb-2">
+                <Award className="w-5 h-5 text-primary-500" />
+                <span className="text-small font-bold text-primary-600 dark:text-primary-400 uppercase tracking-widest">{t('nav.testimonials')}</span>
+              </div>
+              <h2 className="text-h2 font-bold text-neutral-900 dark:text-neutral-100 italic">Voices of impact from our community</h2>
+            </motion.div>
+
+            {loading ? (
+              <div className="flex justify-center py-12">
+                <Loader2 className="w-8 h-8 text-primary-500 animate-spin" />
+              </div>
+            ) : testimonials.length > 0 ? (
+              <div className="relative overflow-hidden w-full py-8">
+                {/* Gradient Masks */}
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white dark:from-background-dark-surface to-transparent z-10" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white dark:from-background-dark-surface to-transparent z-10" />
+
+                <motion.div
+                  className="flex items-center space-x-12 rtl:space-x-reverse"
+                  animate={{
+                    x: [0, -2000] // Roughly width adjustment, will loop infinitely
+                  }}
+                  transition={{
+                    duration: 40,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  style={{ width: 'fit-content' }}
+                >
+                  {[...testimonials, ...testimonials, ...testimonials].map((file, idx) => {
+                    const fullUrl = `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/Recognition/Testimonials/${encodeURIComponent(file.name)}`;
+                    return (
+                      <div key={`${file.name}-${idx}`} className="flex-shrink-0">
+                        <img
+                          src={fullUrl}
+                          alt={file.name}
+                          className="h-32 md:h-40 w-auto object-contain transition-all duration-500 hover:scale-110 filter dark:brightness-90 hover:brightness-100"
+                          loading="lazy"
+                        />
+                      </div>
+                    );
+                  })}
+                </motion.div>
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
