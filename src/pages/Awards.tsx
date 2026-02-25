@@ -5,6 +5,7 @@ import { Trophy, ExternalLink, Loader2, Award } from 'lucide-react';
 import CertificateModal from '../components/CertificateModal';
 import { supabase } from '../lib/supabase';
 import { MasonryGrid } from '../components/MasonryGrid';
+import ImageModal from '../components/ImageModal';
 
 export default function Awards() {
   const { t } = useTranslation();
@@ -126,12 +127,17 @@ export default function Awards() {
                     const fullUrl = `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/Recognition/Testimonials/${encodeURIComponent(file.name)}`;
                     return (
                       <div key={`${file.name}-${idx}`} className="group relative overflow-hidden rounded-xl">
-                        <img
+                        <ImageModal
                           src={fullUrl}
                           alt={file.name}
-                          className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 cursor-pointer"
-                          loading="lazy"
-                          onClick={() => window.open(fullUrl, '_blank')}
+                          trigger={
+                            <img
+                              src={fullUrl}
+                              alt={file.name}
+                              className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 cursor-pointer"
+                              loading="lazy"
+                            />
+                          }
                         />
                         {/* Subtle overlay on hover */}
                         <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/5 transition-colors duration-normal pointer-events-none" />

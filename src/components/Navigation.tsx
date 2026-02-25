@@ -112,6 +112,22 @@ export default function Navigation() {
             ))}
 
             <Link
+              to="/awards"
+              className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${location.pathname === '/awards'
+                ? 'text-primary-600 dark:text-primary-400'
+                : 'text-neutral-700 dark:text-neutral-300'
+                }`}
+            >
+              {t('nav.awards')}
+              {location.pathname === '/awards' && (
+                <motion.div
+                  layoutId="activeNav"
+                  className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400"
+                />
+              )}
+            </Link>
+
+            <Link
               to="/contact"
               className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${location.pathname === '/contact'
                 ? 'text-primary-600 dark:text-primary-400'
