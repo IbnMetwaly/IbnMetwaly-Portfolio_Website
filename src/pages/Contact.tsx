@@ -26,9 +26,17 @@ export default function Contact() {
     setSubmitStatus(null);
 
     try {
-      const { data, error } = await supabase.functions.invoke('contact-form', {
-        body: formData
-      });
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            status: 'unread'
+          }
+        ]);
 
       if (error) throw error;
 
@@ -155,8 +163,8 @@ export default function Contact() {
                 {submitStatus && (
                   <div
                     className={`p-lg rounded-md ${submitStatus === 'success'
-                        ? 'bg-semantic-success/10 text-semantic-success'
-                        : 'bg-semantic-error/10 text-semantic-error'
+                      ? 'bg-semantic-success/10 text-semantic-success'
+                      : 'bg-semantic-error/10 text-semantic-error'
                       }`}
                   >
                     {submitStatus === 'success'

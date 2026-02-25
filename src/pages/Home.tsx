@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { TrendingUp, BookOpen, Award, Users } from 'lucide-react';
+import { supabase } from '../lib/supabase';
+
 
 // Animated Counter Component
 function AnimatedCounter({ end, duration = 2000, suffix = '' }: { end: number; duration?: number; suffix?: string }) {
@@ -38,43 +40,41 @@ function AnimatedCounter({ end, duration = 2000, suffix = '' }: { end: number; d
 }
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const [dbStats, setDbStats] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
 
-  const stats = [
-    {
-      icon: TrendingUp,
-      value: 96.5,
-      suffix: '%',
-      label: t('home.stats.attainment.label'),
-      subtitle: t('home.stats.attainment.subtitle')
-    },
-    {
-      icon: BookOpen,
-      value: 68,
-      suffix: 'K+',
-      label: t('home.stats.stories.label'),
-      subtitle: t('home.stats.stories.subtitle')
-    },
-    {
-      icon: Users,
-      value: 13,
-      suffix: '+',
-      label: t('home.stats.experience.label'),
-      subtitle: t('home.stats.experience.subtitle')
-    },
-    {
-      icon: Award,
-      value: 1,
-      suffix: 'st',
-      label: t('home.stats.ranking.label'),
-      subtitle: t('home.stats.ranking.subtitle')
+  useEffect(() => {
+    async function fetchStats() {
+      const { data, error } = await supabase
+        .from('site_stats')
+        .select('*')
+        .order('display_order', { ascending: true });
+
+      if (error) {
+        console.error('Error fetching stats:', error);
+      } else {
+        setDbStats(data || []);
+      }
+      setLoading(false);
     }
-  ];
+    fetchStats();
+  }, []);
+
+  const stats = dbStats.map(stat => ({
+    icon: stat.key === 'attainment' ? TrendingUp :
+      stat.key === 'stories' ? BookOpen :
+        stat.key === 'experience' ? Users : Award,
+    value: stat.value,
+    suffix: stat.suffix,
+    label: i18n.language === 'ar' ? stat.label_ar : stat.label_en,
+    subtitle: i18n.language === 'ar' ? stat.subtitle_ar : stat.subtitle_en
+  }));
 
   const awards = [
     {
