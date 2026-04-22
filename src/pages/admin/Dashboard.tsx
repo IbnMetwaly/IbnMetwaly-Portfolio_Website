@@ -21,20 +21,32 @@ export default function Dashboard() {
 
     useEffect(() => {
         async function fetchStats() {
-            const [awardsRes, certsRes] = await Promise.all([
-                supabase.from('awards').select('id', { count: 'exact' }),
-                supabase.from('certifications').select('id', { count: 'exact' })
-            ]);
+            try {
+                const [awardsResult, certsResult, testimonialsResult] = await Promise.allSettled([
+                    supabase.from('awards').select('id', { count: 'exact' }),
+                    supabase.from('certifications').select('id', { count: 'exact' }),
+                    fetchBlobFileList('Testimonials/manifest.json'),
+                ]);
 
-            // For testimonials, we read the Blob manifest
-            const testimonials = await fetchBlobFileList('Testimonials/manifest.json').catch(() => []);
+                const awardsCount = awardsResult.status === 'fulfilled' ? (awardsResult.value.count || 0) : 0;
+                const certsCount = certsResult.status === 'fulfilled' ? (certsResult.value.count || 0) : 0;
+                const testimonialsCount = testimonialsResult.status === 'fulfilled' ? testimonialsResult.value.length : 0;
 
-            setStats({
-                awards: awardsRes.count || 0,
-                certifications: certsRes.count || 0,
-                testimonials: testimonials.length,
-            });
-            setLoading(false);
+                setStats({
+                    awards: awardsCount,
+                    certifications: certsCount,
+                    testimonials: testimonialsCount,
+                });
+            } catch (error) {
+                console.error('Error fetching dashboard stats:', error);
+                setStats({
+                    awards: 0,
+                    certifications: 0,
+                    testimonials: 0,
+                });
+            } finally {
+                setLoading(false);
+            }
         }
 
         fetchStats();
