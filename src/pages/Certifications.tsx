@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Award, FileText, BookOpen, ExternalLink, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import CertificateModal from '../components/CertificateModal';
+import { getBlobPublicUrl } from '../lib/blobStorage';
 
 export default function Certifications() {
   const { t, i18n } = useTranslation();
@@ -94,7 +95,7 @@ export default function Certifications() {
                     <CertificateModal
                       certificateUrl={license.certificate_path?.startsWith('http')
                         ? license.certificate_path
-                        : `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/${license.certificate_path}`}
+                        : getBlobPublicUrl(`certificates/${license.certificate_path}`)}
                       trigger={
                         <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
                           <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
@@ -140,7 +141,7 @@ export default function Certifications() {
                     <CertificateModal
                       certificateUrl={cert.certificate_path?.startsWith('http')
                         ? cert.certificate_path
-                        : `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/${cert.certificate_path}`}
+                        : getBlobPublicUrl(`certificates/${cert.certificate_path}`)}
                       trigger={
                         <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
                           <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
@@ -186,7 +187,7 @@ export default function Certifications() {
                     <CertificateModal
                       certificateUrl={pd.certificate_path?.startsWith('http')
                         ? pd.certificate_path
-                        : `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/${pd.certificate_path}`}
+                        : getBlobPublicUrl(`certificates/${pd.certificate_path}`)}
                       trigger={
                         <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 text-small font-medium transition-colors group">
                           <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />

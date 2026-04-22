@@ -6,6 +6,7 @@ import CertificateModal from '../components/CertificateModal';
 import { supabase } from '../lib/supabase';
 import { MasonryGrid } from '../components/MasonryGrid';
 import ImageModal from '../components/ImageModal';
+import { fetchBlobFileList, getBlobPublicUrl } from '../lib/blobStorage';
 
 export default function Awards() {
   const { t, i18n } = useTranslation();
@@ -42,20 +43,8 @@ export default function Awards() {
 
     async function fetchTestimonials() {
       try {
-        const { data, error } = await supabase.storage
-          .from('Recognition')
-          .list('Testimonials', {
-            limit: 100,
-            offset: 0,
-            sortBy: { column: 'name', order: 'asc' }
-          });
-
-        if (error) {
-          console.error('Error fetching testimonials:', error);
-        } else if (data) {
-          const files = data.filter(file => file.name && file.name !== '.emptyFolderPlaceholder');
-          setTestimonials(files);
-        }
+        const files = await fetchBlobFileList('Testimonials/manifest.json');
+        setTestimonials(files);
       } catch (err) {
         console.error('Unexpected error fetching testimonials:', err);
       } finally {
@@ -116,7 +105,7 @@ export default function Awards() {
                       <CertificateModal
                         certificateUrl={award.certificate_path.startsWith('http')
                           ? award.certificate_path
-                          : `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/Recognition/${award.certificate_path}`}
+                          : getBlobPublicUrl(award.certificate_path)}
                         trigger={
                           <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
                             <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
@@ -160,7 +149,7 @@ export default function Awards() {
               <div className="px-lg">
                 <MasonryGrid columns={2} gap={6} className="max-w-6xl mx-auto">
                   {testimonials.map((file, idx) => {
-                    const fullUrl = `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/Recognition/Testimonials/${encodeURIComponent(file.name)}`;
+                    const fullUrl = getBlobPublicUrl(file.path);
                     return (
                       <div key={`${file.name}-${idx}`} className="group relative overflow-hidden rounded-xl">
                         <ImageModal

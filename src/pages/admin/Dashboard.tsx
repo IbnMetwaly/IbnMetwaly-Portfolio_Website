@@ -9,6 +9,7 @@ import {
     TrendingUp,
     Loader2
 } from 'lucide-react';
+import { fetchBlobFileList } from '../../lib/blobStorage';
 
 export default function Dashboard() {
     const [stats, setStats] = useState({
@@ -25,15 +26,13 @@ export default function Dashboard() {
                 supabase.from('certifications').select('id', { count: 'exact' })
             ]);
 
-            // For testimonials, we check the storage bucket
-            const { data: testimonials } = await supabase.storage
-                .from('Recognition')
-                .list('Testimonials');
+            // For testimonials, we read the Blob manifest
+            const testimonials = await fetchBlobFileList('Testimonials/manifest.json').catch(() => []);
 
             setStats({
                 awards: awardsRes.count || 0,
                 certifications: certsRes.count || 0,
-                testimonials: (testimonials?.length || 1) - 1, // Subtract placeholder if exists
+                testimonials: testimonials.length,
             });
             setLoading(false);
         }
@@ -114,8 +113,8 @@ export default function Dashboard() {
                             <span className="text-neutral-900 dark:text-neutral-100 font-bold">4 / 4</span>
                         </div>
                         <div className="flex justify-between items-center py-sm">
-                            <span className="text-neutral-600 dark:text-neutral-400">Storage Buckets</span>
-                            <span className="text-neutral-900 dark:text-neutral-100 font-bold">1 Found</span>
+                            <span className="text-neutral-600 dark:text-neutral-400">Blob Asset Source</span>
+                            <span className="text-neutral-900 dark:text-neutral-100 font-bold">Vercel Blob</span>
                         </div>
                     </div>
                 </div>
