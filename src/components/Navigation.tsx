@@ -83,7 +83,7 @@ export default function Navigation() {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
-              src={theme === 'light' ? '/images/logo_light.png' : '/images/logo_dark.png'}
+              src={theme === 'light' ? 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/images/logo_light.png' : 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/images/logo_dark.png'}
               alt="Khalid Metwaly"
               className="h-10 w-auto"
             />
@@ -187,7 +187,7 @@ export default function Navigation() {
             </TooltipProvider>
             {/* Download CV Button */}
             <a
-              href="/Khalid_Metwaly_CV.pdf"
+              href="https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Khalid_Metwaly_CV.pdf"
               download="Khalid_Metwaly_CV.pdf"
               className="hidden md:flex items-center space-x-2 rtl:space-x-reverse px-6 py-2.5 bg-primary-600 dark:bg-primary-400 text-white dark:text-neutral-900 rounded-md font-semibold hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-fast"
             >
@@ -244,7 +244,7 @@ export default function Navigation() {
                 className="pt-4 px-4"
               >
                 <a
-                  href="/Khalid_Metwaly_CV.pdf"
+                  href="https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Khalid_Metwaly_CV.pdf"
                   download="Khalid_Metwaly_CV.pdf"
                   className="flex items-center justify-center space-x-2 rtl:space-x-reverse w-full py-4 bg-primary-600 dark:bg-primary-400 text-white dark:text-neutral-900 rounded-md font-bold shadow-md hover:bg-primary-700 dark:hover:bg-primary-500 transition-colors"
                 >

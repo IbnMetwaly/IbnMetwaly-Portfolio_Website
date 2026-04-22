@@ -57,7 +57,7 @@ export default function Certifications() {
                 </div>
                 <div className="pt-sm border-t border-neutral-100 dark:border-neutral-800">
                   <CertificateModal
-                    certificateUrl={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/${t(`certifications.licenses.${license}.certificatePath`, { defaultValue: `licenses/${license}.pdf` })}`}
+                    certificateUrl={`https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/${t(`certifications.licenses.${license}.certificatePath`, { defaultValue: `licenses/${license}.pdf` })}`}
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
                         <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
@@ -99,7 +99,7 @@ export default function Certifications() {
                 </div>
                 <div className="pt-sm border-t border-neutral-100 dark:border-neutral-800">
                   <CertificateModal
-                    certificateUrl={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/${t(`certifications.certifications.${cert}.certificatePath`, { defaultValue: `core/${cert}.pdf` })}`}
+                    certificateUrl={`https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/${t(`certifications.certifications.${cert}.certificatePath`, { defaultValue: `core/${cert}.pdf` })}`}
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
                         <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
@@ -141,7 +141,7 @@ export default function Certifications() {
                 </div>
                 <div className="pt-xs border-t border-neutral-200 dark:border-neutral-700">
                   <CertificateModal
-                    certificateUrl={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/certificates/${t(`certifications.professional.${pd}.certificatePath`, { defaultValue: `pd/${pd}.pdf` })}`}
+                    certificateUrl={`https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/${t(`certifications.professional.${pd}.certificatePath`, { defaultValue: `pd/${pd}.pdf` })}`}
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 text-small font-medium transition-colors group">
                         <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />

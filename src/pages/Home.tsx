@@ -139,7 +139,7 @@ export default function Home() {
               className="relative"
             >
               <img
-                src="/images/khalid-profile.png"
+                src="https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/images/khalid-profile.png"
                 alt="Khalid Metwaly"
                 className="w-full max-w-md mx-auto rounded-xl shadow-xl-light dark:shadow-md-dark"
               />

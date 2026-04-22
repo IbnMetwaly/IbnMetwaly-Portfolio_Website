@@ -226,7 +226,7 @@ export default function Contact() {
 
                 <div className="space-y-md">
                   <a
-                    href="/Khalid_Metwaly_CV.pdf"
+                    href="https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Khalid_Metwaly_CV.pdf"
                     download
                     className="flex items-center justify-center space-x-2 rtl:space-x-reverse w-full px-6 py-3 bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 rounded-md font-semibold hover:scale-105 transition-all duration-fast"
                   >

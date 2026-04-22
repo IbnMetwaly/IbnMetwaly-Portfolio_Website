@@ -45,7 +45,7 @@ describe('Navigation component', () => {
     const downloadLink = downloadLinkElement.closest('a');
     expect(downloadLink).not.toBeNull();
     expect(downloadLink?.tagName).toBe('A');
-    expect(downloadLink).toHaveAttribute('href', '/Khalid_Metwaly_CV.pdf');
+    expect(downloadLink).toHaveAttribute('href', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Khalid_Metwaly_CV.pdf');
     expect(downloadLink).toHaveAttribute('download', 'Khalid_Metwaly_CV.pdf');
   });
 

@@ -16,7 +16,7 @@ export default function Footer() {
           {/* About */}
           <div>
             <img
-              src={theme === 'light' ? '/images/logo_light.png' : '/images/logo_dark.png'}
+              src={theme === 'light' ? 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/images/logo_light.png' : 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/images/logo_dark.png'}
               alt="Khalid Metwaly"
               className="h-10 w-auto mb-md"
             />

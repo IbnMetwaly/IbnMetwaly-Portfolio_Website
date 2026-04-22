@@ -78,7 +78,7 @@ export default function About() {
               transition={{ delay: 0.2 }}
             >
               <img
-                src="/images/khalid-profile.png"
+                src="https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/images/khalid-profile.png"
                 alt="Khalid Metwaly"
                 className="w-full max-w-md mx-auto rounded-lg shadow-lg-light dark:shadow-md-dark"
               />
