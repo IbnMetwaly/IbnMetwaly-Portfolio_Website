@@ -242,14 +242,14 @@
         "organization": "مدرسة الخران",
         "year": "2025",
         "description": "تقدير للتكامل المتميز للتكنولوجيا التعليمية",
-        "certificatePath": "awards/award1.pdf"
+        "certificatePath": "Awards/Aldar_TAW_2025.png"
       },
       "award2": {
         "title": "معلم متميز",
         "organization": "مدارس الإمارات الوطنية",
         "year": "2019",
         "description": "التميز في التدريس ومشاركة الطلاب",
-        "certificatePath": "awards/award2.pdf"
+        "certificatePath": "Recognition/ENS_Outstanding Teacher_2019.png"
       },
       "award3": {
         "title": "ترشيح جائزة قيادة الأثر التعليمي",
@@ -257,7 +257,7 @@
         "year": "2026",
         "location": "دبي",
         "description": "مرشح للقيادة الاستثنائية في التعليم",
-        "certificatePath": "awards/award3.pdf"
+        "certificatePath": "Awards/WES_Dubai_2026.jpg"
       },
       "award4": {
         "title": "ترشيح جائزة التميز في التعليم",
@@ -265,21 +265,21 @@
         "year": "2025",
         "location": "دبي",
         "description": "مرشح لممارسات التدريس المبتكرة",
-        "certificatePath": "awards/award4.pdf"
+        "certificatePath": "Awards/Education2.0_Dubai_2025.png"
       },
       "award5": {
         "title": "القائد العالمي برافوبرافو",
         "organization": "منصة برافوبرافو",
         "year": "2024",
         "description": "المركز الأول عالميًا من بين 180 مدرسة مع أكثر من 68000 قصة",
-        "certificatePath": "awards/award5.pdf"
+        "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
       },
       "award6": {
         "title": "التميز في أقرأ عربي",
         "organization": "منصة أقرأ عربي",
         "year": "2024",
         "description": "المركز الثاني محليًا (أكثر من 100 مدرسة)، المركز الثالث عالميًا (أكثر من 300 مدرسة)",
-        "certificatePath": "awards/award6.pdf"
+        "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
       }
     }
   },
@@ -291,13 +291,13 @@
       "license1": {
         "title": "رخصة القيادة التعليمية",
         "year": "2025",
-        "certificatePath": "licenses/license1.pdf"
+        "certificatePath": "Qualifications/Licenses/Educational Leadership License_MoE_2025.png"
       },
       "license2": {
         "title": "رخصة المعلم",
         "organization": "وزارة التربية والتعليم - الإمارات",
         "year": "2022",
-        "certificatePath": "licenses/license2.pdf"
+        "certificatePath": "Qualifications/Licenses/Teachers License_MoE_2022.png"
       }
     },
     "certifications": {
@@ -312,25 +312,25 @@
         "title": "أداة ملاحظة eProve eleot 2.0",
         "organization": "كوجنيا",
         "year": "2021",
-        "certificatePath": "certifications/cert2.pdf"
+        "certificatePath": "Qualifications/Certificates/eProve eleot 2.0_2021.jpg"
       },
       "cert3": {
         "title": "تدريس اللغة العربية للناطقين بغيرها",
         "organization": "المركز الدولي لتعليم اللغة العربية",
         "year": "2012",
-        "certificatePath": "certifications/cert3.pdf"
+        "certificatePath": "Qualifications/Licenses/TAFL_ICT_2012.jpg"
       },
       "cert4": {
         "title": "المهارات الأساسية في تعلم اللغة العربية",
         "organization": "أكاديمية المعلمين الوطنية",
         "year": "2018",
-        "certificatePath": "certifications/cert4.pdf"
+        "certificatePath": "Qualifications/Certificates/Teaching Basic Language Skills_2017.jpg"
       },
       "cert5": {
         "title": "التربية ومهارات التدريس",
         "organization": "جامعة عين شمس",
         "year": "2015",
-        "certificatePath": "certifications/cert5.pdf"
+        "certificatePath": "Qualifications/Licenses/Teaching Certificate_2015.png"
       }
     },
     "professional": {
@@ -339,7 +339,7 @@
         "title": "استراتيجيات التعلم التعاوني كاغان",
         "organization": "كاغان للنشر والتطوير المهني",
         "year": "2024",
-        "certificatePath": "professional-development/pd1.pdf"
+        "certificatePath": "Qualifications/Certificates/Kagan Coop_2024.png"
       },
       "pd2": {
         "title": "استقصاء الاستفسار (الفئة 3)",
