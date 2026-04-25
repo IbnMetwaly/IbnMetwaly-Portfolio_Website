@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Award, FileText, BookOpen, ExternalLink } from 'lucide-react';
 import CertificateModal from '../components/CertificateModal';
 
-const VERCEL_BLOB_URL = import.meta.env.VITE_VERCEL_BLOB_URL || 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com';
+const VERCEL_BLOB_URL = import.meta.env.VITE_VERCEL_BLOB_URL;
 
 export default function Certifications() {
   const { t } = useTranslation();
