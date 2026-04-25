@@ -1,7 +1,8 @@
 import requests
 import json
+import os
 
-token = "vercel_blob_rw_YvUAka9dIyhj4FlQ_wEVEqELym204Duoh3IaJJW8PMMR9lU"
+token = os.getenv("VERCEL_BLOB_RW_TOKEN")
 url = "https://blob.vercel-storage.com"
 
 headers = {
