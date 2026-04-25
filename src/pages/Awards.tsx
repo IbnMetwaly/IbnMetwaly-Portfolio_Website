@@ -3,9 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Trophy, ExternalLink, Loader2, Award } from 'lucide-react';
 import CertificateModal from '../components/CertificateModal';
-import { supabase } from '../lib/supabase';
+
 import { MasonryGrid } from '../components/MasonryGrid';
 import ImageModal from '../components/ImageModal';
+
+const VERCEL_BLOB_URL = import.meta.env.VITE_VERCEL_BLOB_URL || "https://yvuaka9diyhj4flq.public.blob.vercel-storage.com";
+const TESTIMONIAL_URLS = ['https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%283%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%284%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_STUDENTS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_STUDENTS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%281%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%282%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%283%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%283%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%284%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%281%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2810%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2811%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2812%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2813%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2816%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2817%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2819%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%282%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%283%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%284%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%285%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%286%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%288%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%289%29.png'];
 
 export default function Awards() {
   const { t } = useTranslation();
@@ -19,31 +22,13 @@ export default function Awards() {
 
   const awards = ['award1', 'award2', 'award3', 'award4', 'award5', 'award6'];
 
-  useEffect(() => {
-    async function fetchTestimonials() {
-      try {
-        const { data, error } = await supabase.storage
-          .from('Recognition')
-          .list('Testimonials', {
-            limit: 100,
-            offset: 0,
-            sortBy: { column: 'name', order: 'asc' }
-          });
-
-        if (error) {
-          console.error('Error fetching testimonials:', error);
-        } else if (data) {
-          const files = data.filter(file => file.name && file.name !== '.emptyFolderPlaceholder');
-          setTestimonials(files);
-        }
-      } catch (err) {
-        console.error('Unexpected error fetching testimonials:', err);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchTestimonials();
+    useEffect(() => {
+    const files = TESTIMONIAL_URLS.map((url, idx) => ({
+      url,
+      pathname: url.split('/').pop() || `testimonial-${idx}`
+    }));
+    setTestimonials(files);
+    setLoading(false);
   }, []);
 
   return (
@@ -87,7 +72,7 @@ export default function Awards() {
                 </p>
                 <div className="mt-auto pt-md border-t border-neutral-100 dark:border-neutral-800">
                   <CertificateModal
-                    certificateUrl={`https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/Recognition/${t(`awards.list.${award}.certificatePath`, { defaultValue: `awards/${award}.pdf` })}`}
+                    certificateUrl={`${VERCEL_BLOB_URL}/${t(`awards.list.${award}.certificatePath`, { defaultValue: `Recognition/Awards/${award}.png` })}`}
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
                         <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
@@ -124,16 +109,16 @@ export default function Awards() {
               <div className="px-lg">
                 <MasonryGrid columns={2} gap={6} className="max-w-6xl mx-auto">
                   {testimonials.map((file, idx) => {
-                    const fullUrl = `https://isbicrdzbyxeckyckrmg.supabase.co/storage/v1/object/public/Recognition/Testimonials/${encodeURIComponent(file.name)}`;
+                    const fullUrl = file.url;
                     return (
-                      <div key={`${file.name}-${idx}`} className="group relative overflow-hidden rounded-xl">
+                      <div key={`${file.pathname}-${idx}`} className="group relative overflow-hidden rounded-xl">
                         <ImageModal
                           src={fullUrl}
-                          alt={file.name}
+                          alt={file.pathname}
                           trigger={
                             <img
                               src={fullUrl}
-                              alt={file.name}
+                              alt={file.pathname}
                               className="w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 cursor-pointer"
                               loading="lazy"
                             />
