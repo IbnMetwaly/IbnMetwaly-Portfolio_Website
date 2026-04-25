@@ -427,17 +427,41 @@
     }
   },
   "testimonials": {
-    "title": "Testimonials",
-    "subtitle": "Voices from Students, Parents & Colleagues",
-    "placeholder": {
-      "note": "31 testimonial files available from ENS UAE (2017-2024) and SIS Egypt (2013-2017)",
-      "message": "This section will showcase feedback from parents, students, and colleagues once uploaded."
-    },
+    "title": "Words of Appreciation",
+    "subtitle": "Discover insights from our global community of researchers, educators, and students shaping the future of scholarly exchange.",
+    "ctaButton": "Say a few words",
+    "searchPlaceholder": "Search by name or keyword...",
     "categories": {
       "all": "All",
       "parents": "Parents",
       "students": "Students",
       "colleagues": "Colleagues"
+    },
+    "viewMore": "View More Testimonials",
+    "secondaryCTA": {
+      "title": "Share Your Academic Journey",
+      "description": "Your experience helps shape the Scholarly ecosystem. Submit your testimonial and inspire the next generation of researchers.",
+      "button": "Submit Your Testimonial"
+    },
+    "modal": {
+      "title": "Submit a Testimonial",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "e.g., Dr. Jane Smith",
+      "role": "Role",
+      "selectRole": "Select your role",
+      "institution": "Institution / School",
+      "institutionPlaceholder": "e.g., Cambridge International",
+      "year": "Year of Engagement",
+      "yearPlaceholder": "e.g., 2024",
+      "profileImage": "Profile Image",
+      "uploadText": "Click to upload or drag and drop",
+      "uploadHint": "PNG, JPG (max. 2MB)",
+      "testimonial": "Your Testimonial",
+      "testimonialPlaceholder": "Share your experience...",
+      "submit": "Submit Testimonial",
+      "successTitle": "Thank You!",
+      "successMessage": "Testimonial Submitted Successfully",
+      "successDescription": "Your experience helps shape our community. It will be visible after a brief review."
     },
     "list": {
       "testimony1": {
