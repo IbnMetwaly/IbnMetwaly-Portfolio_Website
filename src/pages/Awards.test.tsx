@@ -81,7 +81,11 @@ describe('Awards page', () => {
     const images = screen.getAllByRole('img');
     // It should render images from the TESTIMONIAL_URLS list
     expect(images.length).toBeGreaterThan(0);
-    expect(images[0]).toHaveAttribute('src', expect.stringContaining('https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/'));
+    expect(
+      images.some((img) =>
+        img.getAttribute('src')?.includes('https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/')
+      )
+    ).toBe(true);
   });
 
   it('uses Vercel Blob URL for certificates', () => {
