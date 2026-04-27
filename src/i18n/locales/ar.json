@@ -267,20 +267,20 @@
         "description": "مرشح لممارسات التدريس المبتكرة",
         "certificatePath": "Awards/Education2.0_Dubai_2025.png"
       },
-      "award5": {
-        "title": "القائد العالمي برافوبرافو",
-        "organization": "منصة برافوبرافو",
-        "year": "2024",
-        "description": "المركز الأول عالميًا من بين 180 مدرسة مع أكثر من 68000 قصة",
-        "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
-      },
-      "award6": {
-        "title": "التميز في أقرأ عربي",
-        "organization": "منصة أقرأ عربي",
-        "year": "2024",
-        "description": "المركز الثاني محليًا (أكثر من 100 مدرسة)، المركز الثالث عالميًا (أكثر من 300 مدرسة)",
-        "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
-      }
+    "award5": {
+      "title": "القائد العالمي برافوبرافو",
+      "organization": "منصة برافوبرافو",
+      "year": "2021",
+      "description": "المركز الأول عالميًا من بين 180 مدرسة مع أكثر من 68000 قصة",
+      "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
+    },
+    "award6": {
+      "title": "التميز في أقرأ عربي",
+      "organization": "منصة أقرأ عربي",
+      "year": "2020",
+      "description": "المركز الثاني محليًا (أكثر من 100 مدرسة)، المركز الثالث عالميًا (أكثر من 300 مدرسة)",
+      "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
+    }
     }
   },
   "certifications": {

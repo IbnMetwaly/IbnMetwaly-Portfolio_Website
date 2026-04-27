@@ -268,20 +268,20 @@
         "description": "Nominated for innovative teaching practices",
         "certificatePath": "Awards/Education2.0_Dubai_2025.png"
       },
-      "award5": {
-        "title": "BravoBravo Global Leader",
-        "organization": "BravoBravo Platform",
-        "year": "2024",
-        "description": "1st place globally among 180 schools with 68,000+ stories",
-        "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
-      },
-      "award6": {
-        "title": "iReadArabic Excellence",
-        "organization": "iReadArabic Platform",
-        "year": "2024",
-        "description": "2nd place locally (100+ schools), 3rd place globally (300+ schools)",
-        "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
-      }
+    "award5": {
+      "title": "BravoBravo Global Leader",
+      "organization": "BravoBravo Platform",
+      "year": "2021",
+      "description": "1st place globally among 180 schools with 68,000+ stories",
+      "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
+    },
+    "award6": {
+      "title": "iReadArabic Excellence",
+      "organization": "iReadArabic Platform",
+      "year": "2020",
+      "description": "2nd place locally (100+ schools), 3rd place globally (300+ schools)",
+      "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
+    }
     }
   },
   "certifications": {

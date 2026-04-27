@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ExternalLink, Loader2, Award } from 'lucide-react';
-import CertificateModal from '../components/CertificateModal';
+import { Loader2, Award } from 'lucide-react';
 import { getVercelBlobUrl } from '../lib/blob';
 
 import { MasonryGrid } from '../components/MasonryGrid';
@@ -21,7 +20,7 @@ export default function Awards() {
     visible: { opacity: 1, y: 0 }
   };
 
-  const awards = ['award1', 'award2', 'award3', 'award4', 'award5', 'award6'];
+  const awards = ['award3', 'award4', 'award1', 'award5', 'award6', 'award2'];
 
     useEffect(() => {
     const files = TESTIMONIAL_URLS.map((url, idx) => ({
@@ -87,17 +86,6 @@ export default function Awards() {
                 <p className="text-small text-neutral-600 dark:text-neutral-400 mb-md flex-grow">
                   {t(`awards.list.${award}.description`)}
                 </p>
-                <div className="mt-auto pt-md border-t border-neutral-100 dark:border-neutral-800">
-                  <CertificateModal
-                    certificateUrl={certificateUrl}
-                    trigger={
-                      <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
-                        <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
-                        <span>{t('nav.viewCertificate')}</span>
-                      </button>
-                    }
-                  />
-                </div>
               </motion.div>
               );
             })}
