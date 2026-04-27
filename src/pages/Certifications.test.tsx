@@ -19,12 +19,13 @@ vi.mock('../components/CertificateModal', () => ({
 // Mock framer-motion
 vi.mock('framer-motion', async () => {
   const actual = await vi.importActual('framer-motion');
+  const stripMotionProps = ({ whileInView, viewport, variants, initial, animate, exit, transition, layoutId, ...props }: any) => props;
   return {
     ...actual,
     motion: {
-      div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-      h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
-      p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+      div: ({ children, ...props }: any) => <div {...stripMotionProps(props)}>{children}</div>,
+      h1: ({ children, ...props }: any) => <h1 {...stripMotionProps(props)}>{children}</h1>,
+      p: ({ children, ...props }: any) => <p {...stripMotionProps(props)}>{children}</p>,
     },
   };
 });

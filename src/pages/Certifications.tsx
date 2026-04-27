@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Award, FileText, BookOpen, ExternalLink } from 'lucide-react';
 import CertificateModal from '../components/CertificateModal';
+import { getVercelBlobUrl } from '../lib/blob';
 
-const VERCEL_BLOB_URL = import.meta.env.VITE_VERCEL_BLOB_URL;
+const VERCEL_BLOB_URL = getVercelBlobUrl();
 
 export default function Certifications() {
   const { t } = useTranslation();
