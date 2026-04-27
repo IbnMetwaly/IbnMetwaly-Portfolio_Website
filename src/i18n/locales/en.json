@@ -253,42 +253,41 @@
         "certificatePath": "Recognition/ENS_Outstanding Teacher_2019.png"
       },
       "award3": {
-        "title": "Education Impact Leadership Award Nomination",
-        "organization": "World Education Summit (WES)",
+        "title": "Education Impact Leadership Award",
+        "organization": "World Education Summit - Dubai",
         "year": "2026",
-        "location": "Dubai",
         "description": "Nominated for exceptional leadership in education",
         "certificatePath": "Awards/WES_Dubai_2026.jpg"
       },
       "award4": {
-        "title": "Excellence in Education Award Nomination",
-        "organization": "Education 2.0 Conference",
+        "title": "Excellence in Education Award",
+        "organization": "Education 2.0 Conference - Dubai",
         "year": "2025",
-        "location": "Dubai",
-        "description": "Nominated for innovative teaching practices",
+        "description": "Selected for accomplishments, ethical practices, and demonstrated history of creativity and innovation in education.",
         "certificatePath": "Awards/Education2.0_Dubai_2025.png"
       },
       "award5": {
-        "title": "BravoBravo Global Leader",
-        "organization": "BravoBravo Platform",
-        "year": "2024",
-        "description": "1st place globally among 180 schools with 68,000+ stories",
-        "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
+      "title": "BravoBravo App",
+      "organization": "BravoBravo Platform",
+      "year": "2021",
+      "description": "1st place globally among 180 schools with 68,000+ stories",
+      "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
       },
       "award6": {
-        "title": "iReadArabic Excellence",
-        "organization": "iReadArabic Platform",
-        "year": "2024",
-        "description": "2nd place locally (100+ schools), 3rd place globally (300+ schools)",
-        "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
+      "title": "iReadArabic Excellence",
+      "organization": "iReadArabic Platform",
+      "year": "2020",
+      "description": "2nd place locally (100+ schools), 3rd place globally (300+ schools)",
+      "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
       }
     }
   },
   "certifications": {
     "title": "Licenses & Certifications",
-    "subtitle": "Professional Credentials & Continuous Learning",
+    "viewCertificate": "View Certificate",
     "licenses": {
       "title": "Professional Licenses",
+      "organization": "Ministry of Education - UAE",
       "license1": {
         "title": "Educational Leadership License",
         "year": "2025",
@@ -296,7 +295,6 @@
       },
       "license2": {
         "title": "Teacher's License",
-        "organization": "Ministry of Education - UAE",
         "year": "2022",
         "certificatePath": "Qualifications/Licenses/Teachers License_MoE_2022.png"
       }
@@ -304,9 +302,9 @@
     "certifications": {
       "title": "Core Certifications",
       "cert1": {
-        "title": "Certified Microsoft Innovative Educator",
-        "organization": "Microsoft Educator Center",
-        "year": "2020",
+        "title": "Teaching Arabic as a Foreign Language (TAFL)",
+        "organization": "International Center for Teaching Arabic (ICT)",
+        "year": "2012",
         "certificatePath": "certifications/cert1.pdf"
       },
       "cert2": {
@@ -739,15 +737,14 @@
     },
     "links": {
       "downloadCV": "Download CV",
-      "viewCertificate": "View Certificate",
       "aboutMeGroup": "About Me",
       "qualificationsGroup": "Qualifications",
-      "recognitionGroup": "Recognition",
+      "recognitionGroup": "Words of Appreciation",
       "futureWriters": "Preparing Future Writers Project"
     }
   },
   "footer": {
     "copyright": "© 2025 Khalid Metwaly. All rights reserved.",
-    "tagline": "Educational Leader | Arabic Language Educator | Digital Innovation Advocate"
+    "tagline": "Arabic Language Specialist | Educational Leader | EdTech Expert"
   }
 }

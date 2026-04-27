@@ -18,19 +18,17 @@ vi.mock('../components/MasonryGrid', () => ({
 vi.mock('../components/ImageModal', () => ({
   default: ({ src, alt, trigger }: any) => <div>{trigger}</div>,
 }));
-vi.mock('../components/CertificateModal', () => ({
-  default: ({ certificateUrl, trigger }: any) => <div data-testid="cert-modal" data-url={certificateUrl}>{trigger}</div>,
-}));
 
 // Mock framer-motion to avoid IntersectionObserver issues
 vi.mock('framer-motion', async () => {
   const actual = await vi.importActual('framer-motion');
+  const stripMotionProps = ({ whileInView, viewport, variants, initial, animate, exit, transition, layoutId, ...props }: any) => props;
   return {
     ...actual,
     motion: {
-      div: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-      h1: ({ children, ...props }: any) => <h1 {...props}>{children}</h1>,
-      p: ({ children, ...props }: any) => <p {...props}>{children}</p>,
+      div: ({ children, ...props }: any) => <div {...stripMotionProps(props)}>{children}</div>,
+      h1: ({ children, ...props }: any) => <h1 {...stripMotionProps(props)}>{children}</h1>,
+      p: ({ children, ...props }: any) => <p {...stripMotionProps(props)}>{children}</p>,
     },
   };
 });
@@ -80,10 +78,14 @@ describe('Awards page', () => {
     const images = screen.getAllByRole('img');
     // It should render images from the TESTIMONIAL_URLS list
     expect(images.length).toBeGreaterThan(0);
-    expect(images[0]).toHaveAttribute('src', expect.stringContaining('https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/'));
+    expect(
+      images.some((img) =>
+        img.getAttribute('src')?.includes('https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/')
+      )
+    ).toBe(true);
   });
 
-  it('uses Vercel Blob URL for certificates', () => {
+  it('uses Vercel Blob URL for award preview images and removes certificate link button', () => {
     render(
       <BrowserRouter>
         <ThemeProvider>
@@ -92,7 +94,12 @@ describe('Awards page', () => {
       </BrowserRouter>
     );
 
-    const certModals = screen.getAllByTestId('cert-modal');
-    expect(certModals[0]).toHaveAttribute('data-url', expect.stringContaining('https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/'));
+    const images = screen.getAllByRole('img');
+    expect(
+      images.some((img) =>
+        img.getAttribute('src')?.includes('https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/')
+      )
+    ).toBe(true);
+    expect(screen.queryByText('nav.viewCertificate')).not.toBeInTheDocument();
   });
 });

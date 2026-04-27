@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Award, FileText, BookOpen, ExternalLink } from 'lucide-react';
 import CertificateModal from '../components/CertificateModal';
+import { getVercelBlobUrl } from '../lib/blob';
 
-const VERCEL_BLOB_URL = import.meta.env.VITE_VERCEL_BLOB_URL;
+const VERCEL_BLOB_URL = getVercelBlobUrl();
 
 export default function Certifications() {
   const { t } = useTranslation();
@@ -25,9 +26,6 @@ export default function Certifications() {
           <motion.h1 initial="hidden" animate="visible" variants={fadeInUp} className="text-h1 font-bold mb-md">
             {t('certifications.title')}
           </motion.h1>
-          <motion.p initial="hidden" animate="visible" variants={fadeInUp} transition={{ delay: 0.1 }} className="text-body-large text-neutral-700 dark:text-neutral-300">
-            {t('certifications.subtitle')}
-          </motion.p>
         </div>
       </section>
 
@@ -48,9 +46,13 @@ export default function Certifications() {
                 <div className="flex-grow">
                   <Award className="w-8 h-8 text-accent-600 dark:text-accent-400 mb-sm" />
                   <h3 className="text-h3 font-semibold mb-xs text-neutral-900 dark:text-neutral-100">{t(`certifications.licenses.${license}.title`)}</h3>
-                  {t(`certifications.licenses.${license}.organization`, { defaultValue: '' }) && (
+                  {t(`certifications.licenses.${license}.organization`, {
+                    defaultValue: t('certifications.licenses.organization', { defaultValue: '' })
+                  }) && (
                     <p className="text-small text-neutral-600 dark:text-neutral-400 mb-xs">
-                      {t(`certifications.licenses.${license}.organization`)}
+                      {t(`certifications.licenses.${license}.organization`, {
+                        defaultValue: t('certifications.licenses.organization', { defaultValue: '' })
+                      })}
                     </p>
                   )}
                   <p className="text-small text-primary-600 dark:text-primary-400 font-semibold mb-md">
@@ -63,7 +65,7 @@ export default function Certifications() {
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
                         <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
-                        <span>{t('nav.viewCertificate')}</span>
+                        <span>{t('certifications.viewCertificate')}</span>
                       </button>
                     }
                   />
@@ -105,7 +107,7 @@ export default function Certifications() {
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
                         <ExternalLink className="w-4 h-4 transition-transform group-hover:scale-110" />
-                        <span>{t('nav.viewCertificate')}</span>
+                        <span>{t('certifications.viewCertificate')}</span>
                       </button>
                     }
                   />
@@ -147,7 +149,7 @@ export default function Certifications() {
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 text-small font-medium transition-colors group">
                         <ExternalLink className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
-                        <span>{t('nav.viewCertificate')}</span>
+                        <span>{t('certifications.viewCertificate')}</span>
                       </button>
                     }
                   />

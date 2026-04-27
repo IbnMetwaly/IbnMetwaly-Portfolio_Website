@@ -245,49 +245,48 @@
         "certificatePath": "Awards/Aldar_TAW_2025.png"
       },
       "award2": {
-        "title": "معلم متميز",
+        "title": "المعلم المتميز",
         "organization": "مدارس الإمارات الوطنية",
         "year": "2019",
         "description": "التميز في التدريس ومشاركة الطلاب",
         "certificatePath": "Recognition/ENS_Outstanding Teacher_2019.png"
       },
       "award3": {
-        "title": "ترشيح جائزة قيادة الأثر التعليمي",
-        "organization": "قمة التعليم العالمية (WES)",
+        "title": "جائزة قيادة الأثر التعليمي",
+        "organization": "قمة التعليم العالمية - دبي",
         "year": "2026",
-        "location": "دبي",
         "description": "مرشح للقيادة الاستثنائية في التعليم",
         "certificatePath": "Awards/WES_Dubai_2026.jpg"
       },
       "award4": {
-        "title": "ترشيح جائزة التميز في التعليم",
-        "organization": "مؤتمر التعليم 2.0",
+        "title": "جائزة التميز في التعليم",
+        "organization": "مؤتمر التعليم 2.0 - دبي",
         "year": "2025",
-        "location": "دبي",
-        "description": "مرشح لممارسات التدريس المبتكرة",
+        "description": "تقديرًا للإنجازات والممارسات الأخلاقية، ولسجل حافل بالإبداع والابتكار في مجال التعليم.",
         "certificatePath": "Awards/Education2.0_Dubai_2025.png"
       },
       "award5": {
-        "title": "القائد العالمي برافوبرافو",
-        "organization": "منصة برافوبرافو",
-        "year": "2024",
-        "description": "المركز الأول عالميًا من بين 180 مدرسة مع أكثر من 68000 قصة",
-        "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
+      "title": "تطبيق براڤوبراڤو",
+      "organization": "شركة براڤو سوفتوير",
+      "year": "2021",
+      "description": "المركز الأول عالميًا من بين 180 مدرسة مع أكثر من 68,000 قصة مقروءة",
+      "certificatePath": "Recognition/ENS_BravoBravo_2021-2022.png"
       },
       "award6": {
-        "title": "التميز في أقرأ عربي",
-        "organization": "منصة أقرأ عربي",
-        "year": "2024",
-        "description": "المركز الثاني محليًا (أكثر من 100 مدرسة)، المركز الثالث عالميًا (أكثر من 300 مدرسة)",
-        "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
+      "title": "منصة أقرأ بالعربية",
+      "organization": "شركة المفكرون الصغار / مدرسة الإمارات الوطنية - العين",
+      "year": "2020",
+      "description": "الحصول على المركز الثاني محليًا (+100 مدرسة) والمركز الثالث عالميًا (+300 مدرسة) في استخدام المنصة",
+      "certificatePath": "Recognition/ENS_iReadArabic_2020.png"
       }
     }
   },
   "certifications": {
     "title": "الرخص والشهادات",
-    "subtitle": "المؤهلات المهنية والتعلم المستمر",
+    "viewCertificate": "عرض الشهادة",
     "licenses": {
       "title": "الرخص المهنية",
+      "organization": "وزارة التربية والتعليم - الإمارات",
       "license1": {
         "title": "رخصة القيادة التعليمية",
         "year": "2025",
@@ -295,7 +294,6 @@
       },
       "license2": {
         "title": "رخصة المعلم",
-        "organization": "وزارة التربية والتعليم - الإمارات",
         "year": "2022",
         "certificatePath": "Qualifications/Licenses/Teachers License_MoE_2022.png"
       }
@@ -303,9 +301,9 @@
     "certifications": {
       "title": "الشهادات الأساسية",
       "cert1": {
-        "title": "معلم مبتكر معتمد من مايكروسوفت",
-        "organization": "مركز معلمي مايكروسوفت",
-        "year": "2020",
+        "title": "تعليم اللغة العربية كلغة أجنبية",
+        "organization": "المركز الدولي لتعليم اللغة العربية",
+        "year": "2012",
         "certificatePath": "certifications/cert1.pdf"
       },
       "cert2": {
@@ -738,15 +736,14 @@
     },
     "links": {
       "downloadCV": "تحميل السيرة الذاتية",
-      "viewCertificate": "عرض الشهادة",
       "aboutMeGroup": "عني",
       "qualificationsGroup": "المؤهلات",
-      "recognitionGroup": "التقدير",
+      "recognitionGroup": "كلمات التقدير",
       "futureWriters": "مشروع إعداد كُتّاب المستقبل"
     }
   },
   "footer": {
     "copyright": "© 2025 خالد متولي. جميع الحقوق محفوظة.",
-    "tagline": "قائد تعليمي | معلم لغة عربية | مناصر للابتكار الرقمي"
+    "tagline": "متخصص في اللغة العربية | قائد تربوي | خبير في تكنولوجيا التعليم"
   }
 }
