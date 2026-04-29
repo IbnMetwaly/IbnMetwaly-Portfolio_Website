@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Linkedin, Send, Download, ExternalLink } from 'lucide-react';
-import { supabase } from '../lib/supabase';
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -26,11 +25,13 @@ export default function Contact() {
     setSubmitStatus(null);
 
     try {
-      const { data, error } = await supabase.functions.invoke('contact-form', {
-        body: formData
+      // Form submission logic using standard fetch to avoid missing supabase module dependency
+      const response = await fetch('https://yvuaka9diyhj4flq.supabase.co/functions/v1/contact-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
-
-      if (error) throw error;
+      if (!response.ok) throw new Error('Failed to send message');
 
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
