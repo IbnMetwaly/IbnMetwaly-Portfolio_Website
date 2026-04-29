@@ -15,7 +15,6 @@ import Awards from './pages/Awards';
 import Certifications from './pages/Certifications';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
-import Testimonials from './pages/Testimonials';
 
 function AppContent() {
   const { i18n } = useTranslation();
@@ -41,7 +40,6 @@ function AppContent() {
             <Route path="/certifications" element={<Certifications />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/testimonials" element={<Testimonials />} />
           </Routes>
         </main>
         <Footer />
