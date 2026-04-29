@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { X, CloudUpload } from 'lucide-react';
+import { X, CloudUpload, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface TestimonialModalProps {
     trigger: React.ReactNode;
 }
-
-import { CheckCircle2 } from 'lucide-react';
 
 export default function TestimonialModal({ trigger }: TestimonialModalProps) {
     const { t } = useTranslation();
@@ -96,10 +94,12 @@ export default function TestimonialModal({ trigger }: TestimonialModalProps) {
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="block text-small font-medium text-neutral-700 dark:text-neutral-300">
+                                        <label htmlFor="role-select" className="block text-small font-medium text-neutral-700 dark:text-neutral-300">
                                             {t('testimonials.modal.role')}
                                         </label>
                                         <select
+                                            id="role-select"
+                                            title={t('testimonials.modal.role')}
                                             className="w-full px-4 py-3 bg-neutral-50 dark:bg-background-dark-page border border-neutral-200 dark:border-neutral-800 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all outline-none text-body dark:text-neutral-100 appearance-none"
                                             required
                                             defaultValue=""
