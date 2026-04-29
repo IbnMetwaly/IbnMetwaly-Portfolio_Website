@@ -50,8 +50,7 @@ export default function Navigation() {
         { path: '/about', label: t('nav.about') },
         { path: '/philosophy', label: t('nav.philosophy') },
         { path: '/journey', label: t('nav.journey') },
-        { path: '/impact', label: t('nav.impact') },
-        { path: '/testimonials', label: t('nav.testimonials') }
+        { path: '/impact', label: t('nav.impact') }
       ]
     },
     {
