@@ -83,7 +83,7 @@ export default function Navigation() {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img
-              src={theme === 'light' ? '/images/logo_light.png' : '/images/logo_dark.png'}
+              src={theme === 'light' ? '/images/logo_light.webp' : '/images/logo_dark.webp'}
               alt="Khalid Metwaly"
               className="h-10 w-auto"
             />
@@ -152,7 +152,7 @@ export default function Navigation() {
                 <TooltipTrigger asChild>
                   <button
                     onClick={toggleLanguage}
-                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-500"
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-600 dark:focus-visible:ring-primary-400"
                     aria-label={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
                   >
                     <Globe className="w-5 h-5" />
@@ -171,7 +171,7 @@ export default function Navigation() {
                 <TooltipTrigger asChild>
                   <button
                     onClick={toggleTheme}
-                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-500"
+                    className="w-10 h-10 flex items-center justify-center rounded-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-fast focus-visible:ring-2 focus-visible:ring-primary-600 dark:focus-visible:ring-primary-400"
                     aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
                   >
                     {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
@@ -189,7 +189,7 @@ export default function Navigation() {
             <a
               href="/Khalid_Metwaly_CV.pdf"
               download="Khalid_Metwaly_CV.pdf"
-              className="hidden md:flex items-center space-x-2 rtl:space-x-reverse px-6 py-2.5 bg-primary-600 dark:bg-primary-400 text-white dark:text-neutral-900 rounded-md font-semibold hover:scale-105 hover:-translate-y-0.5 hover:shadow-lg-light dark:hover:shadow-md-dark transition-all duration-fast"
+              className="hidden md:flex items-center space-x-2 rtl:space-x-reverse px-6 py-2.5 bg-primary-600 dark:bg-primary-400 text-white dark:text-neutral-900 rounded-md font-semibold hover:shadow-md dark:hover:shadow-md transition-shadow duration-fast"
             >
               <Download className="w-4 h-4" /><span>{t('nav.downloadCV')}</span>
             </a>
@@ -246,7 +246,7 @@ export default function Navigation() {
                 <a
                   href="/Khalid_Metwaly_CV.pdf"
                   download="Khalid_Metwaly_CV.pdf"
-                  className="flex items-center justify-center space-x-2 rtl:space-x-reverse w-full py-4 bg-primary-600 dark:bg-primary-400 text-white dark:text-neutral-900 rounded-md font-bold shadow-md hover:bg-primary-700 dark:hover:bg-primary-500 transition-colors"
+                  className="flex items-center justify-center space-x-2 rtl:space-x-reverse w-full py-4 bg-primary-600 dark:bg-primary-400 text-white dark:text-neutral-900 rounded-md font-bold shadow-md-light dark:shadow-md-dark hover:shadow-lg-light dark:hover:shadow-lg-dark transition-shadow duration-fast"
                 >
                   <Download className="w-5 h-5" />
                   <span>{t('nav.downloadCV')}</span>
