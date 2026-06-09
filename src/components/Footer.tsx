@@ -16,7 +16,7 @@ export default function Footer() {
           {/* About */}
           <div>
             <img
-              src={theme === 'light' ? '/images/logo_light.png' : '/images/logo_dark.png'}
+              src={theme === 'light' ? '/images/logo_light.webp' : '/images/logo_dark.webp'}
               alt="Khalid Metwaly"
               className="h-10 w-auto mb-md"
             />
