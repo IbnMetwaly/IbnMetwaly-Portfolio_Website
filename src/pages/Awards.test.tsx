@@ -79,9 +79,19 @@ describe('Awards page', () => {
     // It should render images from the TESTIMONIAL_URLS list
     expect(images.length).toBeGreaterThan(0);
     expect(
-      images.some((img) =>
-        img.getAttribute('src')?.includes('https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/')
-      )
+      images.some((img) => {
+        const src = img.getAttribute('src');
+        if (!src) return false;
+        try {
+          const parsed = new URL(src);
+          return (
+            parsed.hostname === 'yvuaka9diyhj4flq.public.blob.vercel-storage.com' &&
+            parsed.pathname.startsWith('/Testimonials/')
+          );
+        } catch {
+          return false;
+        }
+      })
     ).toBe(true);
   });
 
@@ -96,9 +106,16 @@ describe('Awards page', () => {
 
     const images = screen.getAllByRole('img');
     expect(
-      images.some((img) =>
-        img.getAttribute('src')?.includes('https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/')
-      )
+      images.some((img) => {
+        const src = img.getAttribute('src');
+        if (!src) return false;
+        try {
+          const parsed = new URL(src);
+          return parsed.hostname === 'yvuaka9diyhj4flq.public.blob.vercel-storage.com';
+        } catch {
+          return false;
+        }
+      })
     ).toBe(true);
     expect(screen.queryByText('nav.viewCertificate')).not.toBeInTheDocument();
   });
