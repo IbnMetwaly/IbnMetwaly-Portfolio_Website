@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './context/ThemeContext';
@@ -9,9 +9,6 @@ import Footer from './components/Footer';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
-const Philosophy = React.lazy(() => import('./pages/Philosophy'));
-const Journey = React.lazy(() => import('./pages/Journey'));
-const Impact = React.lazy(() => import('./pages/Impact'));
 const Awards = React.lazy(() => import('./pages/Awards'));
 const Certifications = React.lazy(() => import('./pages/Certifications'));
 const Skills = React.lazy(() => import('./pages/Skills'));
@@ -43,9 +40,9 @@ function AppContent() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/philosophy" element={<Philosophy />} />
-              <Route path="/journey" element={<Journey />} />
-              <Route path="/impact" element={<Impact />} />
+              <Route path="/philosophy" element={<Navigate to="/about#philosophy" replace />} />
+              <Route path="/journey" element={<Navigate to="/about#journey" replace />} />
+              <Route path="/impact" element={<Navigate to="/about#impact" replace />} />
               <Route path="/awards" element={<Awards />} />
               <Route path="/certifications" element={<Certifications />} />
               <Route path="/skills" element={<Skills />} />

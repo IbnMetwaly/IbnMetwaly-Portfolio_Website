@@ -45,15 +45,6 @@ export default function Navigation() {
 
   const groups = [
     {
-      label: t('nav.aboutMeGroup'),
-      links: [
-        { path: '/about', label: t('nav.about') },
-        { path: '/philosophy', label: t('nav.philosophy') },
-        { path: '/journey', label: t('nav.journey') },
-        { path: '/impact', label: t('nav.impact') }
-      ]
-    },
-    {
       label: t('nav.qualificationsGroup'),
       links: [
         { path: '/certifications', label: t('nav.certifications') },
@@ -64,6 +55,7 @@ export default function Navigation() {
 
   const standaloneLinks = [
     { path: '/', label: t('nav.home') },
+    { path: '/about', label: t('nav.about') },
     { path: '/awards', label: t('nav.awards') },
     { path: '/contact', label: t('nav.contact') }
   ];
@@ -100,6 +92,22 @@ export default function Navigation() {
             >
               {t('nav.home')}
               {location.pathname === '/' && (
+                <motion.div
+                  layoutId="activeNav"
+                  className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400"
+                />
+              )}
+            </Link>
+
+            <Link
+              to="/about"
+              className={`text-small font-medium transition-colors duration-fast hover:text-primary-600 dark:hover:text-primary-400 relative ${location.pathname === '/about'
+                ? 'text-primary-600 dark:text-primary-400'
+                : 'text-neutral-700 dark:text-neutral-300'
+                }`}
+            >
+              {t('nav.about')}
+              {location.pathname === '/about' && (
                 <motion.div
                   layoutId="activeNav"
                   className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400"

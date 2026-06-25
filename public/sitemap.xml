@@ -11,21 +11,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ibnmetwaly-portfolio-website.vercel.app/philosophy</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ibnmetwaly-portfolio-website.vercel.app/journey</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ibnmetwaly-portfolio-website.vercel.app/impact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ibnmetwaly-portfolio-website.vercel.app/awards</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
