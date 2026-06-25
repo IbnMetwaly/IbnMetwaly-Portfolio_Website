@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Analytics } from '@vercel/analytics/react';
@@ -6,15 +6,24 @@ import { ThemeProvider } from './context/ThemeContext';
 import './i18n';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Philosophy from './pages/Philosophy';
-import Journey from './pages/Journey';
-import Impact from './pages/Impact';
-import Awards from './pages/Awards';
-import Certifications from './pages/Certifications';
-import Skills from './pages/Skills';
-import Contact from './pages/Contact';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
+const Philosophy = React.lazy(() => import('./pages/Philosophy'));
+const Journey = React.lazy(() => import('./pages/Journey'));
+const Impact = React.lazy(() => import('./pages/Impact'));
+const Awards = React.lazy(() => import('./pages/Awards'));
+const Certifications = React.lazy(() => import('./pages/Certifications'));
+const Skills = React.lazy(() => import('./pages/Skills'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+
+function PageFallback() {
+  return (
+    <div className="flex min-h-[50vh] items-center justify-center px-lg py-2xl text-neutral-600 dark:text-neutral-300" role="status" aria-live="polite">
+      Loading page…
+    </div>
+  );
+}
 
 function AppContent() {
   const { i18n } = useTranslation();
@@ -30,17 +39,19 @@ function AppContent() {
       <div className="min-h-screen bg-neutral-50 dark:bg-background-dark-page text-neutral-900 dark:text-neutral-100 transition-colors duration-normal">
         <Navigation />
         <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/philosophy" element={<Philosophy />} />
-            <Route path="/journey" element={<Journey />} />
-            <Route path="/impact" element={<Impact />} />
-            <Route path="/awards" element={<Awards />} />
-            <Route path="/certifications" element={<Certifications />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+          <Suspense fallback={<PageFallback />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/philosophy" element={<Philosophy />} />
+              <Route path="/journey" element={<Journey />} />
+              <Route path="/impact" element={<Impact />} />
+              <Route path="/awards" element={<Awards />} />
+              <Route path="/certifications" element={<Certifications />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
         <Analytics />

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Award, FileText, BookOpen, ExternalLink } from 'lucide-react';
-import CertificateModal from '../components/CertificateModal';
+import LazyCertificateModal from '../components/LazyCertificateModal';
 import { getVercelBlobUrl } from '../lib/blob';
 
 import SEO from '../components/SEO';
@@ -67,7 +67,7 @@ export default function Certifications() {
                   </p>
                 </div>
                 <div className="pt-sm border-t border-neutral-100 dark:border-neutral-800">
-                  <CertificateModal
+                  <LazyCertificateModal
                     certificateUrl={`${VERCEL_BLOB_URL}/${t(`certifications.licenses.${license}.certificatePath`, { defaultValue: `Qualifications/Licenses/${license}.png` })}`}
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
@@ -109,7 +109,7 @@ export default function Certifications() {
                   </p>
                 </div>
                 <div className="pt-sm border-t border-neutral-100 dark:border-neutral-800">
-                  <CertificateModal
+                  <LazyCertificateModal
                     certificateUrl={`${VERCEL_BLOB_URL}/${t(`certifications.certifications.${cert}.certificatePath`, { defaultValue: `Qualifications/Certificates/${cert}.png` })}`}
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium transition-colors group">
@@ -151,7 +151,7 @@ export default function Certifications() {
                   </p>
                 </div>
                 <div className="pt-xs border-t border-neutral-200 dark:border-neutral-700">
-                  <CertificateModal
+                  <LazyCertificateModal
                     certificateUrl={`${VERCEL_BLOB_URL}/${t(`certifications.professional.${pd}.certificatePath`, { defaultValue: `Qualifications/Certificates/${pd}.png` })}`}
                     trigger={
                       <button className="inline-flex items-center space-x-2 rtl:space-x-reverse text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 text-small font-medium transition-colors group">

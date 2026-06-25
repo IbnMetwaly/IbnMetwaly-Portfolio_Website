@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
@@ -6,11 +6,12 @@ import { useTranslation } from 'react-i18next';
 interface CertificateModalProps {
     certificateUrl: string;
     trigger: React.ReactNode;
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
 }
 
-export default function CertificateModal({ certificateUrl, trigger }: CertificateModalProps) {
+export default function CertificateModal({ certificateUrl, trigger, open, onOpenChange }: CertificateModalProps) {
     const { t } = useTranslation();
-    const [isOpen, setIsOpen] = useState(false);
 
     // Append #toolbar=0&navpanes=0&scrollbar=0 to hide default PDF viewer controls/download options
     const secureUrl = certificateUrl.includes('#')
@@ -18,7 +19,7 @@ export default function CertificateModal({ certificateUrl, trigger }: Certificat
         : `${certificateUrl}#toolbar=0&navpanes=0&scrollbar=0`;
 
     return (
-        <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
+        <Dialog.Root open={open} onOpenChange={onOpenChange}>
             <Dialog.Trigger asChild>
                 {trigger}
             </Dialog.Trigger>
