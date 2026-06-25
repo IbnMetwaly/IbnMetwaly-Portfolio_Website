@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Loader2, Award } from 'lucide-react';
 import { getVercelBlobUrl } from '../lib/blob';
+import LazyImageModal from '../components/LazyImageModal';
 
-import { MasonryGrid } from '../components/MasonryGrid';
-import ImageModal from '../components/ImageModal';
+const MasonryGrid = React.lazy(() => import('../components/MasonryGrid').then((module) => ({ default: module.MasonryGrid })));
 
 const VERCEL_BLOB_URL = getVercelBlobUrl();
 const TESTIMONIAL_URLS = ['https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%283%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%284%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_STUDENTS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_STUDENTS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%281%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%282%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%283%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%283%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%284%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%281%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2810%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2811%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2812%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2813%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2816%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2817%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2819%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%282%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%283%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%284%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%285%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%286%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%288%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%289%29.png'];
@@ -22,7 +22,7 @@ export default function Awards() {
 
   const awards = ['award3', 'award4', 'award1', 'award5', 'award6', 'award2'];
 
-    useEffect(() => {
+  useEffect(() => {
     const files = TESTIMONIAL_URLS.map((url, idx) => ({
       url,
       pathname: url.split('/').pop() || `testimonial-${idx}`
@@ -52,17 +52,17 @@ export default function Awards() {
               const certificateUrl = `${VERCEL_BLOB_URL}/${certificatePath}`;
 
               return (
-              <motion.div
-                key={award}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl-light dark:hover:shadow-lg-dark transition-all duration-normal"
-              >
+                <motion.div
+                  key={award}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex flex-col bg-white dark:bg-background-dark-surface p-xl rounded-lg border-t-4 border-accent-500 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-xl-light dark:hover:shadow-lg-dark transition-all duration-normal"
+                >
                 <div className="group relative overflow-hidden rounded-lg mb-md">
-                  <ImageModal
+                  <LazyImageModal
                     src={certificateUrl}
                     alt={t(`awards.list.${award}.title`)}
                     trigger={
@@ -86,7 +86,7 @@ export default function Awards() {
                 <p className="text-small text-neutral-600 dark:text-neutral-400 mb-md flex-grow">
                   {t(`awards.list.${award}.description`)}
                 </p>
-              </motion.div>
+                </motion.div>
               );
             })}
           </div>
@@ -113,12 +113,13 @@ export default function Awards() {
               </div>
             ) : testimonials.length > 0 ? (
               <div className="px-lg">
-                <MasonryGrid columns={2} gap={6} className="max-w-6xl mx-auto">
-                  {testimonials.map((file, idx) => {
+                <React.Suspense fallback={<div className="flex justify-center py-12"><Loader2 className="w-8 h-8 text-primary-500 animate-spin" /></div>}>
+                  <MasonryGrid columns={2} gap={6} className="max-w-6xl mx-auto">
+                    {testimonials.map((file, idx) => {
                     const fullUrl = file.url;
                     return (
                       <div key={`${file.pathname}-${idx}`} className="group relative overflow-hidden rounded-xl">
-                        <ImageModal
+                        <LazyImageModal
                           src={fullUrl}
                           alt={file.pathname}
                           trigger={
@@ -134,8 +135,9 @@ export default function Awards() {
                         <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/5 transition-colors duration-normal pointer-events-none" />
                       </div>
                     );
-                  })}
-                </MasonryGrid>
+                    })}
+                  </MasonryGrid>
+                </React.Suspense>
               </div>
             ) : null}
           </div>

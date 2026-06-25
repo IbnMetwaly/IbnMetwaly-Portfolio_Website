@@ -15,8 +15,8 @@ vi.mock('react-i18next', () => ({
 vi.mock('../components/MasonryGrid', () => ({
   MasonryGrid: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }));
-vi.mock('../components/ImageModal', () => ({
-  default: ({ src, alt, trigger }: any) => <div>{trigger}</div>,
+vi.mock('../components/LazyImageModal', () => ({
+  default: ({ trigger }: any) => <div>{trigger}</div>,
 }));
 
 // Mock framer-motion to avoid IntersectionObserver issues

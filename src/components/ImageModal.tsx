@@ -6,11 +6,13 @@ interface ImageModalProps {
     src: string;
     alt: string;
     trigger: React.ReactNode;
+    open?: boolean;
+    onOpenChange?: (open: boolean) => void;
 }
 
-export default function ImageModal({ src, alt, trigger }: ImageModalProps) {
+export default function ImageModal({ src, alt, trigger, open, onOpenChange }: ImageModalProps) {
     return (
-        <Dialog.Root>
+        <Dialog.Root open={open} onOpenChange={onOpenChange}>
             <Dialog.Trigger asChild>
                 {trigger}
             </Dialog.Trigger>

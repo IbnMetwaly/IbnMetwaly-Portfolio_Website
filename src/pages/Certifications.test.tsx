@@ -12,7 +12,7 @@ vi.mock('react-i18next', () => ({
 }));
 
 // Mock components
-vi.mock('../components/CertificateModal', () => ({
+vi.mock('../components/LazyCertificateModal', () => ({
   default: ({ certificateUrl, trigger }: any) => <div data-testid="cert-modal" data-url={certificateUrl}>{trigger}</div>,
 }));
 
