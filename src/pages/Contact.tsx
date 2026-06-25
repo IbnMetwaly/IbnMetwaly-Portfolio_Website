@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Linkedin, Send, Download, ExternalLink } from 'lucide-react';
 
+import SEO from '../components/SEO';
 export default function Contact() {
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
@@ -51,7 +52,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Contact Khalid Metwaly | Educational Leader"
+        description="Contact Khalid Metwaly for Arabic education leadership, curriculum development, school improvement, professional collaboration, and speaking opportunities."
+        type="profile"
+      />
+      <div className="pt-20">
       {/* Page Header */}
       <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
         <div className="max-w-container mx-auto px-lg text-center">
@@ -250,6 +257,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

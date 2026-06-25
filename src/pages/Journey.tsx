@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Calendar } from 'lucide-react';
 
+import SEO from '../components/SEO';
 export default function Journey() {
   const { t } = useTranslation();
 
@@ -53,7 +54,13 @@ export default function Journey() {
   ];
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Professional Journey | Educational Leadership Experience"
+        description="Follow Khalid Metwaly's professional journey across Arabic teaching, curriculum leadership, school improvement, and international education roles."
+        type="profile"
+      />
+      <div className="pt-20">
       {/* Page Header */}
       <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
         <div className="max-w-container mx-auto px-lg text-center">
@@ -145,6 +152,7 @@ export default function Journey() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

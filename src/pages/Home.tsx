@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { TrendingUp, BookOpen, Award, Users } from 'lucide-react';
 
+import SEO from '../components/SEO';
 // Animated Counter Component
 function AnimatedCounter({ end, duration = 2000, suffix = '' }: { end: number; duration?: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -95,7 +96,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Khalid Metwaly | Educational Leader & Arabic Language Educator"
+        description="Explore Khalid Metwaly's portfolio as an award-winning educational leader, Arabic language specialist, digital learning innovator, and student attainment advocate."
+        type="profile"
+      />
+      <div className="pt-20">
       {/* Hero Section */}
       <section className="relative bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-100 via-neutral-50 to-teal-50 dark:from-primary-900/20 dark:via-background-dark-surface dark:to-background-dark-page py-3xl overflow-hidden">
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.05))] bg-[size:30px_30px]"></div>
@@ -309,6 +316,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
