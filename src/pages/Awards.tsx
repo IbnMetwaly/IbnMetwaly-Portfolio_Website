@@ -7,6 +7,7 @@ import { getVercelBlobUrl } from '../lib/blob';
 import { MasonryGrid } from '../components/MasonryGrid';
 import ImageModal from '../components/ImageModal';
 
+import SEO from '../components/SEO';
 const VERCEL_BLOB_URL = getVercelBlobUrl();
 const TESTIMONIAL_URLS = ['https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%283%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS%20%284%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_PARENTS.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_STUDENTS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_STUDENTS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%281%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%281%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%282%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%282%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%283%29.jpg', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%283%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/ENS_TEACHERS%20%284%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%281%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2810%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2811%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2812%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2813%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2816%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2817%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%2819%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%282%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%283%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%284%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%285%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%286%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%288%29.png', 'https://yvuaka9diyhj4flq.public.blob.vercel-storage.com/Testimonials/SIS_Parent%20%289%29.png'];
 
@@ -32,7 +33,13 @@ export default function Awards() {
   }, []);
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Awards & Testimonials | Recognized Arabic Educator"
+        description="View awards, recognitions, and testimonials highlighting Khalid Metwaly's excellence in Arabic education, leadership, and community impact."
+        type="profile"
+      />
+      <div className="pt-20">
       <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
         <div className="max-w-container mx-auto px-lg text-center">
           <motion.h1 initial="hidden" animate="visible" variants={fadeInUp} className="text-h1 font-bold mb-md">
@@ -141,6 +148,7 @@ export default function Awards() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

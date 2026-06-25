@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Laptop, Heart, Globe, GraduationCap } from 'lucide-react';
 
+import SEO from '../components/SEO';
 export default function Skills() {
   const { t } = useTranslation();
 
@@ -12,7 +13,13 @@ export default function Skills() {
   };
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Skills & Expertise | Arabic Teaching, EdTech & Leadership"
+        description="Explore Khalid Metwaly's technical skills, soft skills, language capabilities, and teaching expertise in Arabic education and EdTech."
+        type="profile"
+      />
+      <div className="pt-20">
       <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
         <div className="max-w-container mx-auto px-lg text-center">
           <motion.h1 initial="hidden" animate="visible" variants={fadeInUp} className="text-h1 font-bold mb-md">
@@ -95,6 +102,7 @@ export default function Skills() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

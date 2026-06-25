@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { TrendingUp, BookOpen, Users, Target } from 'lucide-react';
 
+import SEO from '../components/SEO';
 export default function Impact() {
   const { t } = useTranslation();
 
@@ -39,7 +40,13 @@ export default function Impact() {
   ];
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Educational Impact | Student Attainment & Engagement"
+        description="Review measurable impact from Khalid Metwaly's Arabic education leadership, including attainment growth, student engagement, and learning outcomes."
+        type="website"
+      />
+      <div className="pt-20">
       <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
         <div className="max-w-container mx-auto px-lg text-center">
           <motion.h1 initial="hidden" animate="visible" variants={fadeInUp} className="text-h1 font-bold mb-md">
@@ -79,6 +86,7 @@ export default function Impact() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

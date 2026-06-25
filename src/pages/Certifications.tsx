@@ -5,6 +5,7 @@ import { Award, FileText, BookOpen, ExternalLink } from 'lucide-react';
 import CertificateModal from '../components/CertificateModal';
 import { getVercelBlobUrl } from '../lib/blob';
 
+import SEO from '../components/SEO';
 const VERCEL_BLOB_URL = getVercelBlobUrl();
 
 export default function Certifications() {
@@ -20,7 +21,13 @@ export default function Certifications() {
   const professionalDev = ['pd1', 'pd2', 'pd3', 'pd4', 'pd5', 'pd6', 'pd7'];
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Certifications & Licenses | Qualified Arabic Educator"
+        description="Explore Khalid Metwaly's teaching licenses, certifications, and professional development in Arabic education, pedagogy, and leadership."
+        type="profile"
+      />
+      <div className="pt-20">
       <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
         <div className="max-w-container mx-auto px-lg text-center">
           <motion.h1 initial="hidden" animate="visible" variants={fadeInUp} className="text-h1 font-bold mb-md">
@@ -159,6 +166,7 @@ export default function Certifications() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

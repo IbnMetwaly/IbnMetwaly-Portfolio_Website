@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Lightbulb, Target, Heart, GraduationCap } from 'lucide-react';
 
+import SEO from '../components/SEO';
 export default function About() {
   const { t } = useTranslation();
 
@@ -31,7 +32,13 @@ export default function About() {
   ];
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="About Khalid Metwaly | Arabic Education Specialist"
+        description="Learn about Khalid Metwaly's background, values, education, and mission as an Arabic language educator and school improvement leader."
+        type="profile"
+      />
+      <div className="pt-20">
       {/* Page Header */}
       <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
         <div className="max-w-container mx-auto px-lg text-center">
@@ -181,6 +188,7 @@ export default function About() {
           </motion.div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

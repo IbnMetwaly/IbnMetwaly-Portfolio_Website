@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { BookOpen, Laptop, TrendingUp } from 'lucide-react';
 
+import SEO from '../components/SEO';
 export default function Philosophy() {
   const { t } = useTranslation();
 
@@ -45,7 +46,13 @@ export default function Philosophy() {
   ];
 
   return (
-    <div className="pt-20">
+    <>
+      <SEO
+        title="Teaching Philosophy | Arabic Learning Innovation"
+        description="Discover Khalid Metwaly's teaching philosophy for Arabic language excellence, digital learning, curriculum design, and data-informed student growth."
+        type="website"
+      />
+      <div className="pt-20">
       {/* Page Header */}
       <section className="bg-gradient-to-br from-primary-50 to-neutral-50 dark:from-background-dark-surface dark:to-background-dark-page py-2xl">
         <div className="max-w-container mx-auto px-lg text-center">
@@ -159,6 +166,7 @@ export default function Philosophy() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
